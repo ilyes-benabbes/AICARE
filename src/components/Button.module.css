@@ -1,0 +1,42 @@
+.logIn {
+  position: relative;
+  font-size: 16.51px;
+  line-height: 135.02%;
+  text-transform: capitalize;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  mix-blend-mode: hard-light;
+}
+.logInWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 7.945257186889648px;
+  align-items: center;
+  justify-content: center;
+}
+.buttonInner {
+  position: absolute;
+  top: -10.34px;
+  left: 7.95px;
+  width: 143.01px;
+  display: flex;
+  flex-direction: column;
+  padding: 7.945257186889648px 51.64417266845703px 7.945257186889648px
+    7.945257186889648px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #44a2b0;
+  position: relative;
+  border-radius: 18.34px;
+  width: 101.3px;
+  height: 34.76px;
+  overflow: hidden;
+  flex-shrink: 0;
+}

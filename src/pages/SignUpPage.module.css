@@ -1,0 +1,408 @@
+.logoChild {
+  position: relative;
+  border-radius: 0.76px;
+  width: 13.74px;
+  height: 13.74px;
+}
+.aicare {
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.logoItem {
+  position: relative;
+  width: 76.36px;
+  height: 76.36px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.logo {
+  width: 161.88px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 13.9px;
+  font-size: 15.27px;
+}
+.home {
+  position: relative;
+  text-transform: capitalize;
+}
+.akarIconschevronDown {
+  position: relative;
+  width: 11.92px;
+  height: 11.92px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-left: -11.92px;
+}
+.aboutParent,
+.pricingWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aboutParent {
+  width: 71.51px;
+  justify-content: center;
+}
+.pricingWrapper {
+  padding: 0 10.924727439880371px 0 0;
+  justify-content: flex-start;
+}
+.logIn {
+  position: relative;
+  font-size: 16.51px;
+  line-height: 135.02%;
+  text-transform: capitalize;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  mix-blend-mode: hard-light;
+}
+.logInWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 7.945257186889648px;
+  align-items: center;
+  justify-content: center;
+}
+.buttonInner {
+  position: absolute;
+  top: -10.34px;
+  left: 7.95px;
+  width: 143.01px;
+  display: flex;
+  flex-direction: column;
+  padding: 7.945257186889648px 51.64417266845703px 7.945257186889648px
+    7.945257186889648px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #44a2b0;
+  position: relative;
+  border-radius: 18.34px;
+  width: 101.3px;
+  height: 34.76px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.navLinks {
+  width: 387.33px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27.81px;
+}
+.t {
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+  width: 126.13px;
+  height: 139.04px;
+  flex-shrink: 0;
+}
+.createAnAccount,
+.navs {
+  display: flex;
+  align-items: center;
+}
+.navs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f9fcfc;
+  border: 0.3px solid #000;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 76px;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 0 130.1035919189453px 0 44.69207000732422px;
+  justify-content: flex-start;
+  gap: 754.8px;
+}
+.createAnAccount {
+  position: relative;
+  font-size: 25.49px;
+  font-family: Mulish;
+  color: #333;
+  text-align: left;
+  width: 316px;
+  height: 104px;
+  flex-shrink: 0;
+}
+.fullName,
+.username {
+  font-family: Mulish;
+  font-size: 13.9px;
+  display: flex;
+}
+.fullName {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  align-items: center;
+  width: 97.03px;
+}
+.username {
+  border: 0;
+  background-color: #f2f2f2;
+  border-radius: 3.48px;
+  width: 367.22px;
+  height: 41.7px;
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.usernameFormselect {
+  width: 367.21783447265625px;
+}
+.gender {
+  position: relative;
+  font-size: 13.9px;
+  font-weight: 600;
+  font-family: Mulish;
+  color: #333;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 88.94px;
+}
+.passwordFormselect {
+  width: 370.69305419921875px;
+}
+.dateOfBirth {
+  position: relative;
+  font-size: 13.9px;
+  font-weight: 600;
+  font-family: Mulish;
+  color: #000;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 127.06px;
+}
+.password,
+.placeholder {
+  height: 41.7px;
+  display: flex;
+}
+.placeholder {
+  flex: 1;
+  position: relative;
+  font-size: 13.9px;
+  line-height: 24.33px;
+  font-family: Mulish;
+  color: #757575;
+  text-align: left;
+  align-items: center;
+}
+.password {
+  border-radius: 3.48px;
+  background-color: #f2f2f2;
+  width: 373.01px;
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.password1,
+.password2,
+.zipCode {
+  font-family: Mulish;
+  font-size: 13.9px;
+}
+.password1 {
+  border: 0;
+  background-color: #f2f2f2;
+  position: relative;
+  border-radius: 3.48px;
+  width: 373px;
+  height: 42px;
+}
+.password2,
+.zipCode {
+  display: flex;
+}
+.zipCode {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  align-items: center;
+  width: 103.1px;
+}
+.password2 {
+  border: 0;
+  background-color: #f2f2f2;
+  border-radius: 3.48px;
+  width: 374.17px;
+  height: 41.7px;
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.phoneNumber {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 140.17px;
+}
+.email,
+.password5,
+.phoneNumber,
+.yourName {
+  font-family: Mulish;
+  font-size: 13.9px;
+}
+.yourName {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 94.72px;
+}
+.email,
+.password5 {
+  border: 0;
+  background-color: #f2f2f2;
+  border-radius: 3.48px;
+}
+.email {
+  width: 368.38px;
+  height: 41.7px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.password5 {
+  position: relative;
+  width: 368px;
+  height: 42px;
+}
+.label {
+  position: absolute;
+  top: calc(50% - 10.5px);
+  left: calc(50% - 26.39px);
+  font-size: 16.22px;
+  line-height: 20.85px;
+  text-transform: uppercase;
+  font-family: Mulish;
+  color: #fff;
+  text-align: left;
+}
+.alreadyHaveAn,
+.cta {
+  position: relative;
+  cursor: pointer;
+}
+.cta {
+  border: 0;
+  padding: 0;
+  background-color: #b80c09;
+  border-radius: 3.48px;
+  width: 110px;
+  height: 42px;
+  opacity: 0.5;
+}
+.alreadyHaveAn {
+  font-size: 16px;
+  text-decoration: underline;
+  font-family: Mulish;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  width: 184px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.createAnAccountForFreeParent {
+  width: 498px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 8px 88px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 9px;
+}
+.frameChild {
+  position: relative;
+  border-radius: 20px;
+  background-color: rgba(22, 110, 131, 0.15);
+  width: 306px;
+  height: 278px;
+}
+.addImageHere {
+  margin: 0;
+}
+.addImageHereContainer1 {
+  line-break: anywhere;
+  width: 100%;
+}
+.addImageHereContainer {
+  position: relative;
+  line-height: 24.33px;
+  display: flex;
+  align-items: center;
+  width: 214px;
+  height: 73px;
+  flex-shrink: 0;
+}
+.formElements,
+.rectangleParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+}
+.formElements {
+  position: absolute;
+  top: 201px;
+  left: calc(50% - 390px);
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  width: 879px;
+  height: 966px;
+  flex-direction: row;
+  padding: 46px 2px 7px;
+  align-items: flex-start;
+  font-size: 13.9px;
+  font-family: Mulish;
+}
+.signUpPage {
+  position: relative;
+  background-color: #f9fcfc;
+  width: 100%;
+  height: 1350px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 17.88px;
+  color: #000;
+  font-family: Inter;
+}

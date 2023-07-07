@@ -1,0 +1,33 @@
+.toutDroitsReserv {
+  position: relative;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  width: 176.9px;
+}
+.footerChild {
+  position: relative;
+  border-top: 1px solid #fff;
+  box-sizing: border-box;
+  width: 1432.13px;
+  height: 0.99px;
+}
+.footer {
+  position: absolute;
+  top: 2468px;
+  left: calc(50% - 713.01px);
+  background-color: #003251;
+  width: 1433.13px;
+  height: 70.51px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.00004649162292480469px 0 1.9876244068145752px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 23px;
+  text-align: left;
+  font-size: 14.9px;
+  color: #fff;
+  font-family: Outfit;
+}

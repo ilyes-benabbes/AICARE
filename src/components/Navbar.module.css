@@ -1,0 +1,132 @@
+.logoChild {
+  position: relative;
+  border-radius: 0.76px;
+  width: 13.74px;
+  height: 13.74px;
+}
+.aicare {
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.logoItem {
+  position: relative;
+  width: 76.36px;
+  height: 76.36px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.logo {
+  width: 161.88px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 13.9px;
+  font-size: 15.27px;
+}
+.home {
+  position: relative;
+  text-transform: capitalize;
+}
+.akarIconschevronDown {
+  position: relative;
+  width: 11.92px;
+  height: 11.92px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-left: -11.92px;
+}
+.aboutParent,
+.pricingWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aboutParent {
+  width: 71.51px;
+  justify-content: center;
+}
+.pricingWrapper {
+  padding: 0 10.924727439880371px 0 0;
+  justify-content: flex-start;
+}
+.signUp {
+  position: relative;
+  font-size: 16.51px;
+  line-height: 135.02%;
+  text-transform: capitalize;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  mix-blend-mode: hard-light;
+}
+.signUpWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 7.945257186889648px;
+  align-items: center;
+  justify-content: center;
+}
+.buttonInner {
+  position: absolute;
+  top: -10.34px;
+  left: 7.95px;
+  width: 143.01px;
+  display: flex;
+  flex-direction: column;
+  padding: 7.945257186889648px 51.64417266845703px 7.945257186889648px
+    7.945257186889648px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #b80c09;
+  position: relative;
+  border-radius: 18.34px;
+  width: 101.3px;
+  height: 34.76px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.navLinks {
+  width: 387.33px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27.81px;
+}
+.t {
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+  width: 126.13px;
+  height: 139.04px;
+  flex-shrink: 0;
+}
+.navs {
+  position: absolute;
+  top: 0;
+  left: 1.99px;
+  background-color: #f9fcfc;
+  border: 0.3px solid #000;
+  box-sizing: border-box;
+  width: 1426.17px;
+  height: 76.47px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 0 130.1035919189453px 0 44.69207000732422px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 754.8px;
+  text-align: left;
+  font-size: 17.88px;
+  color: #000;
+  font-family: Inter;
+}

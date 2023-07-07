@@ -1,0 +1,71 @@
+.icon {
+  position: absolute;
+  top: 69.03px;
+  left: -149.95px;
+  width: 14.47px;
+  height: 0.9px;
+  overflow: hidden;
+}
+.artificialIntelligence {
+  position: absolute;
+  top: 74.28px;
+  left: 39.33px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 72.68px;
+}
+.usingAiModels {
+  margin: 0;
+}
+.usingAiModelsContainer1 {
+  line-break: anywhere;
+  width: 100%;
+}
+.usingAiModelsContainer {
+  position: absolute;
+  top: 193.53px;
+  left: 29.07px;
+  font-size: 15.39px;
+  letter-spacing: -0.01em;
+  line-height: 112.41%;
+  font-weight: 600;
+  font-family: Nunito;
+  display: flex;
+  align-items: center;
+  width: 226.58px;
+  height: 59px;
+}
+.frame18variant4Child {
+  position: absolute;
+  top: 158.02px;
+  left: 21.8px;
+  border-top: 0.9px solid #000;
+  box-sizing: border-box;
+  width: 261.65px;
+  height: 0.86px;
+}
+.frame18variant4Item {
+  position: absolute;
+  top: 23.95px;
+  left: 37.12px;
+  width: 43.11px;
+  height: 43.11px;
+}
+.frame18variant4 {
+  position: relative;
+  border-radius: 17.1px;
+  background-color: #fff;
+  border: 1.5px solid #000;
+  box-sizing: border-box;
+  width: 300.93px;
+  height: 288.02px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 34.79px;
+  color: #000;
+  font-family: Sansation;
+}
