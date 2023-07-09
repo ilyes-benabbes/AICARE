@@ -78,7 +78,7 @@ const LandingPage = () => {
         <div className={styles.frameParent}>
           <div className={styles.frame18variant4Wrapper}>
             <div className={styles.frame18variant4}>
-              <img className={styles.icon} alt="" src="/icon.svg" />
+              <img className={styles.icon} alt="" src="/icon7.svg" />
               <b className={styles.lowestPricing}>Lowest pricing</b>
               <div
                 className={styles.findTheBest1}

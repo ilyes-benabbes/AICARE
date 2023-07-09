@@ -7,18 +7,18 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   const onButtonClick = useCallback(() => {
-    navigate("/");
+    navigate("/login-page");
   }, [navigate]);
 
   const onAlreadyHaveAnClick = useCallback(() => {
-    navigate("/");
+    navigate("/login-page");
   }, [navigate]);
 
   return (
     <div className={styles.signUpPage}>
       <div className={styles.navs}>
         <div className={styles.logo}>
-          <img className={styles.logoChild} alt="" src="/star-11.svg" />
+          <img className={styles.logoChild} alt="" src="/star-111.svg" />
           <div className={styles.aicare}>aicare</div>
           <div className={styles.logoItem} />
         </div>

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className={styles.navs}>
       <div className={styles.logo}>
-        <img className={styles.logoChild} alt="" src="/star-12.svg" />
+        <img className={styles.logoChild} alt="" src="/star-121.svg" />
         <div className={styles.aicare}>aicare</div>
         <div className={styles.logoItem} />
       </div>

@@ -18,31 +18,31 @@ const FEEDBACK = () => {
                   <img
                     className={styles.starFillChild}
                     alt=""
-                    src="/star-111.svg"
+                    src="/star-1111.svg"
                   />
                 </div>
                 <div className={styles.starFill1}>
                   <img
                     className={styles.starFillItem}
                     alt=""
-                    src="/star-121.svg"
+                    src="/star-1211.svg"
                   />
                 </div>
                 <div className={styles.starFill2}>
                   <img
                     className={styles.starFillItem}
                     alt=""
-                    src="/star-13.svg"
+                    src="/star-131.svg"
                   />
                 </div>
                 <div className={styles.starFill3}>
                   <img
                     className={styles.starFillItem}
                     alt=""
-                    src="/star-14.svg"
+                    src="/star-141.svg"
                   />
                 </div>
-                <img className={styles.starIcon1} alt="" src="/star.svg" />
+                <img className={styles.starIcon1} alt="" src="/star1.svg" />
               </div>
             </div>
             <div className={styles.frameChild} />

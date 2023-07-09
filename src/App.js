@@ -4,6 +4,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+import LoggedInCaregiverIfProfile from "./pages/LoggedInCaregiverIfProfile";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import LandingPage from "./pages/LandingPage";
@@ -26,6 +27,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/login-page":
         title = "";
         metaDescription = "";
         break;
@@ -55,7 +60,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
+      <Route path="/" element={<LoggedInCaregiverIfProfile />} />
+      <Route path="/login-page" element={<LoginPage />} />
       <Route path="/sign-up-page" element={<SignUpPage />} />
       <Route path="/landing-page" element={<LandingPage />} />
     </Routes>
