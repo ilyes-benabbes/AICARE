@@ -1,0 +1,23 @@
+/* DatePickerStyles.css */
+
+/* Adjust the height and width of the datepicker input */
+.react-datepicker-wrapper input {
+    height: 40px; /* Adjust the height as needed */
+    width: 1000px; /* Adjust the width as needed */
+    padding: 8px 12px; /* Adjust the padding as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
+  /* Optionally, you can style the datepicker popup as well */
+  .react-datepicker__input-container {
+    display: block; /* Adjust the display property as needed */
+    width: 1000px; /* Adjust the width as needed */
+  }
+
+  .jcp{
+    width: 370px;
+    color : red ;
+    height: 30px;
+    margin-top: 10px;
+  }
+  

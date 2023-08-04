@@ -8,6 +8,8 @@ import LoggedInCaregiverIfProfile from "./pages/LoggedInCaregiverIfProfile";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import LandingPage from "./pages/LandingPage";
+import { File2 } from "./features/counter/File2";
+import { Counter } from "./features/counter/Counter";
 import { useEffect } from "react";
 
 function App() {
@@ -31,6 +33,12 @@ function App() {
         metaDescription = "";
         break;
       case "/login-page":
+        title = "";
+        metaDescription = "";
+        break;
+
+
+      case "/slice":
         title = "";
         metaDescription = "";
         break;
@@ -64,6 +72,10 @@ function App() {
       <Route path="/login-page" element={<LoginPage />} />
       <Route path="/sign-up-page" element={<SignUpPage />} />
       <Route path="/landing-page" element={<LandingPage />} />
+      <Route path="/counter" element={<Counter />} />
+      <Route path="/h" element={<LoggedInCaregiverIfProfile />} />
+      
+      <Route path="/File2" element={<File2 />} />
     </Routes>
   );
 }

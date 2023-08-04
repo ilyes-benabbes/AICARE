@@ -4,6 +4,10 @@
   width: 13.74px;
   height: 13.74px;
 }
+.errormessage{
+  color : red ;
+  /* border : red solid 2px ;  */
+}
 .aicare {
   position: relative;
   text-transform: capitalize;
@@ -291,6 +295,33 @@
   width: 368.38px;
   height: 41.7px;
   display: flex;
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+.email {
+  /* color : blue ;  */
+  width: 368.38px;
+  height: 41.7px;
+  display: flex;
+  /* border : red solid 2px ; */
+  flex-direction: row;
+  padding: 0 13.900989532470703px;
+  box-sizing: border-box;
+  align-items:center;
+  justify-content: center;
+}
+.err {
+  /* color : blue ;  */
+  width: 368.38px;
+  height: 41.7px;
+  display: flex;
+  border : red solid 2px ;
+  border-radius: 5px;
   flex-direction: row;
   padding: 0 13.900989532470703px;
   box-sizing: border-box;
