@@ -74,7 +74,7 @@ const SignUpPage = () => {
     // console.log(FormData)
     // const json = JSON.stringify(FormData)
     
-    const json = {"role":"client","fullname":"ben ilyes","gender":"male","email":"1235644s4s456s5@gmail.cz" , "password1": "ilyes1" , "password2": "ilyes1" , "phone":"04567" , "dob":"2008-05-13"   }
+    const json = {"role":"seller","fullname":"ben ilyes","gender":"male","email":"1213544644s4s456s5@gmail.cz" , "password1": "ilyes1" , "password2": "ilyes1" , "phone":"04567" , "dob":"2008-05-13"   }
     console.log(json)
 
   

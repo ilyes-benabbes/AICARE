@@ -1,0 +1,27 @@
+.center {
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  }
+  
+   .center * {
+    margin : 10px;
+   }
+
+   .frame{
+    padding: 1cm;
+    width : 40% ;
+    height : 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: auto;
+    margin : 7cm ; 
+    flex-direction: column;
+  
+  }
+  .frame * {
+  margin-top: 10px;
+  /* width : 100% ;  */
+  }

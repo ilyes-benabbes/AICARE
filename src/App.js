@@ -4,6 +4,8 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import LoggedInCaregiverIfProfile from "./pages/LoggedInCaregiverIfProfile";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
@@ -11,6 +13,7 @@ import LandingPage from "./pages/LandingPage";
 import { File2 } from "./features/counter/File2";
 import { Counter } from "./features/counter/Counter";
 import { useEffect } from "react";
+import MyForm from "./pages/Form";
 
 function App() {
   const action = useNavigationType();
@@ -74,6 +77,7 @@ function App() {
       <Route path="/landing-page" element={<LandingPage />} />
       <Route path="/counter" element={<Counter />} />
       <Route path="/h" element={<LoggedInCaregiverIfProfile />} />
+      <Route path="/my-form" element={<MyForm   />} />
       
       <Route path="/File2" element={<File2 />} />
     </Routes>

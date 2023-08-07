@@ -3,6 +3,10 @@ import styles2 from "./SignUpPage.module.css";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate  } from "react-router-dom";
+import MyForm from "./Form";
+// import { useHistory } from 'react-router-dom';
+// import { useNa } from 'react-router-dom';
+
 
 
 
@@ -18,6 +22,13 @@ const LoginPage = () => {
   const [FormData , setFormData] = useState({})
   const [Errors , setErrors] = useState({})
   const navigate = useNavigate();
+  // const history = useHistory();
+
+  const goToMyForm = () => {
+    // history.push('/my-form', { formData: fetchedData });
+    navigate('/my-form');
+    // navigate('/my-form', {   props: "hello there from the login" , id : "nounou" });
+  };
   
   useEffect(() => {
     // Update the document title using the browser API
@@ -64,17 +75,31 @@ async function handleLogin(e){
     },
   }
 
-  ).then((response) => {
+  ).then( (response) => {
     // Assuming you have received the token from the backend in the 'response' variable
-    console.log(response.data.key)
+    console.log('Authorization', `Token ${response.data.key}`)
       localStorage.setItem('authToken', response.data.key);
-      navigate('/h')
+      // const async form =
+      axios.options("profile/ProfileAPIView/",  {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${response.data.key}`
+        }
+      })
+      .then(res => {
+        // save the form in the local storage. i believe
+    localStorage.setItem('form', JSON.stringify(res.data.actions.PUT));
 
+        // localStorage.('Form')
+        console.log("yaya")
+        goToMyForm()
+        // console.logJSON.stringify(res.data.actions.PUT))
+      }).catch((error) => {console.log("we have problems with second post reqeust")})}
 
-}).catch((error) => {
+).catch((error) => {
   console.log(Errors)
   setErrors({});
-
+ 
   const test = error.response.data;
   console.log(test , "hh")
   // console.log(error.response.data)
@@ -119,6 +144,7 @@ async function handleLogin(e){
       </div>
       <div className={styles.frameParent}>
         <button onClick={deleteU}>delte user</button>
+        {/* <MyForm h = "hehe"></MyForm> */}
         <div className={styles.frameGroup}>
           <div className={styles.signInWrapper}>
             <b className={styles.signIn}>sign in</b>

@@ -149,6 +149,12 @@
   font-size: 13.9px;
   display: flex;
 }
+.check{
+  /* display :none ;  */
+  background-color: red;
+  color: red;
+  width: 300px;
+}
 .fullName {
   position: relative;
   font-weight: 600;
@@ -157,6 +163,8 @@
   align-items: center;
   width: 97.03px;
 }
+
+
 .username {
   border: 0;
   background-color: #f2f2f2;
@@ -272,6 +280,7 @@
 .email,
 .password5,
 .phoneNumber,
+
 .yourName {
   font-family: Mulish;
   font-size: 13.9px;
@@ -292,7 +301,7 @@
   border-radius: 3.48px;
 }
 .email {
-  width: 368.38px;
+  width: 100%;  
   height: 41.7px;
   display: flex;
   flex-direction: row;
@@ -303,9 +312,12 @@
 }
 
 
+
+/* this is it  */
 .email {
   /* color : blue ;  */
-  width: 368.38px;
+  /* width: 700.38px; */
+  width :100%;
   height: 41.7px;
   display: flex;
   /* border : red solid 2px ; */
