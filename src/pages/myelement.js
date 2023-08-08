@@ -51,3 +51,5 @@ export default function myelement(type) {
     <div>myelement</div>
   )
 }
+
+}

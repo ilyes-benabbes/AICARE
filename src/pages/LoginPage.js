@@ -88,8 +88,19 @@ async function handleLogin(e){
       })
       .then(res => {
         // save the form in the local storage. i believe
-    localStorage.setItem('form', JSON.stringify(res.data.actions.PUT));
-
+        var formbefore = JSON.stringify(res.data.actions.PUT)
+        
+        for (const prop in res.data){
+          // if (res.data[prop][0].id) 
+          if (res.data[prop][0] && res.data[prop][0].id)
+          {console.log(res.data[prop])
+            formbefore= formbefore.slice(0, -1)+","+`"${prop}" : `    +JSON.stringify(res.data[prop])+"}"
+            
+          }
+        } 
+        
+        localStorage.setItem('form', formbefore);
+          console.log(formbefore)
         // localStorage.('Form')
         console.log("yaya")
         goToMyForm()
