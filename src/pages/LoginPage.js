@@ -88,6 +88,7 @@ async function handleLogin(e){
       })
       .then(res => {
         // save the form in the local storage. i believe
+        console.log(res.data)
         var formbefore = JSON.stringify(res.data.actions.PUT)
         
         for (const prop in res.data){
@@ -100,6 +101,7 @@ async function handleLogin(e){
         } 
         
         localStorage.setItem('form', formbefore);
+        console.log("ddd")
           console.log(formbefore)
         // localStorage.('Form')
         console.log("yaya")
