@@ -12,8 +12,14 @@ import SignUpPage from "./pages/SignUpPage";
 import LandingPage from "./pages/LandingPage";
 import { File2 } from "./features/counter/File2";
 import { Counter } from "./features/counter/Counter";
+import ProfileCard from "./pages/profileCard";
 import { useEffect } from "react";
+// import Mypatients from "./pages/Mypatients";
+import Mypatients from "./pages/Mypatients";
+import Inbox from "./pages/Inbox";
 import MyForm from "./pages/Form";
+import Cert from "./pages/Cert"
+import Loggedin from "./pages/Loggedin";
 
 function App() {
   const action = useNavigationType();
@@ -78,6 +84,11 @@ function App() {
       <Route path="/counter" element={<Counter />} />
       <Route path="/h" element={<LoggedInCaregiverIfProfile />} />
       <Route path="/my-form" element={<MyForm   />} />
+      <Route path="/card" element={<ProfileCard  />} />
+      <Route path="/mypatients" element={<Mypatients  />} />
+      <Route path="/inbox" element={<Inbox  />} />
+      <Route path="/cert" element={<Cert  />} />
+      <Route path="/log" element={<Loggedin  />} />
       
       <Route path="/File2" element={<File2 />} />
     </Routes>

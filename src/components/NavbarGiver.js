@@ -1,6 +1,9 @@
 import Button from "./Button";
 import styles from "./Navbar.module.css";
-const Navbar = () => {
+import styles2 from "../pages/mycss.module.css";
+const NavbarGiver = () => {
+  
+
   return (
     <div className={styles.navs}>
       <div className={styles.logo}>
@@ -15,21 +18,16 @@ const Navbar = () => {
           <div className={styles.akarIconschevronDown} />
         </div>
         <div className={styles.home}>contact us</div>
-        <div className={styles.pricingWrapper}>
-          <div className={styles.home}>Pricing</div>
-        </div>
-        <Button />
-        <button className={styles.button} id="hh">
-          <div className={styles.buttonInner}>
-            <div className={styles.signUpWrapper}>
-              <div className={styles.signUp}>sign up</div>
-            </div>
-          </div>
-        </button>
+
+        <img src="/message.svg" alt="Profile" className={styles.image} />
+        <img src="/myaccount.svg" alt="Profile" className={styles.image} />
+      
+        
+        
       </div>
       
     </div>
   );
 };
 
-export default Navbar;
+export default NavbarGiver;

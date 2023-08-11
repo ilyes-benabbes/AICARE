@@ -4,16 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate  } from "react-router-dom";
 import MyForm from "./Form";
-// import { useHistory } from 'react-router-dom';
-// import { useNa } from 'react-router-dom';
 
-
-
-
-
-
-// const value = React.useContext(UserContext);
-// console.log(value) 
 
 const LoginPage = () => {
 

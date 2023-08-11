@@ -25,3 +25,392 @@
   margin-top: 10px;
   /* width : 100% ;  */
   }
+
+  .column {
+    position: relative;
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: 1cm; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    border: 1px solid #212121;
+    background: #FBFDFD;
+    background-color: tomato;
+    background: rgba(255, 255, 255, 0.40); 
+
+
+    padding: 0.2cm;
+    min-width: 300px;
+    min-height: 600px;
+
+
+  }
+
+  #containerAlpha{
+    height: 90vh; 
+    width: 23vw;
+    border-radius: 17px;
+    border: solid black 2px;
+   
+  }
+  .cirulairecontainer {
+
+    border : solid olive 2px ;
+    width: 40%; /* Adjust the dimensions as needed */
+    height: 50%;
+    overflow: hidden;
+    border-radius: 50%; 
+  margin-top: 0.4cm;
+  min-width: 50px;
+  min-height: 100px;
+
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .bigText{
+    color: #963be4;
+    font-family: 'Courier New', Courier, monospace;
+font-size: 22px;
+font-family: Inter;
+font-size: 17px;
+font-style: normal;
+font-weight: 700;
+line-height: 25.2px; 
+color: #22232d;
+font-family: Inter;
+font-family: 'Courier New', Courier, monospace;
+font-size: 25px;
+text-align: center;
+font-style: normal;
+font-weight: 700;
+line-height: 25.2px; /* 148.235% */
+padding-left: 0.5cm;
+padding-right: 0.5cm;
+  }
+  .starFillChild{
+    position: relative;
+    width: 15px;
+    height: 15px;
+  }
+
+
+ .columnLeft b{
+    color: black;
+font-family: Nunito;
+font-family: 'Courier New', Courier, monospace;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 112.414%;
+letter-spacing: -0.12px;
+text-transform: capitalize;
+  }
+
+  .columnLeft{
+    display: flex;
+    width: 85%;
+    height: 80%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: solid 2px black ;
+    gap: 22px;
+    padding-left: 0.5cm;
+    padding-top: 0.5cm;
+    border-radius: 17px;
+    border: 1px solid #293691;
+    background: #FBFDFD;
+
+  }
+
+  .genderMaleContainer1{
+    display: flex;
+width: 118px;
+height: 20px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+  }
+
+  .column span {
+    /* border: red 2px solid; */
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: left;
+    min-width: 100%;
+    
+    /* width: 100%; */
+  }
+
+  .column span p {
+    display: block;
+  }
+ .column span b {
+    white-space: nowrap;
+  }
+  .progress{
+    width: 90%;
+    height: 9%;
+  }
+
+  .rate{
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
+    margin-right: 3cm;
+    padding: 1px;
+  }
+
+
+  .row , .leftSide , .buttons , .patient ,.leftSide2{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* border: black 2px solid; */
+  /* background-color: #963be4; */
+  }
+  
+  .leftSide p {
+    font-family: poppins;
+  }
+
+
+
+
+  #mypatients{
+    border: solid black 2px;
+    /* width : 70%; */
+    display : flex; 
+    /* align-items: flex-start;
+     */
+     justify-content: flex-start;
+    flex-direction: column;
+    /* height: none; */
+    min-height: 100px;
+
+  }
+
+  .patient{
+    /* background-color: #963be4; */
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 17px;
+    border: solid rgba(79, 69, 69, 0.638) 1.2px;
+    border-radius: 8px;
+    background: #FFF;
+    margin-left: 0px; 
+    /* align-items:stretch; */
+
+    
+
+  }
+
+  .imagemypatien{
+
+    border : solid rgb(4, 1, 1) 1.5px ;
+    width: 57px; /* Adjust the dimensions as needed */
+    height: 57px;
+    overflow: hidden;
+    border-radius: 10%; 
+    margin: 7px;
+
+  }
+
+
+  .compond{
+    display: flex;
+padding: 8px 8px 8px 12px;
+align-items: center;
+gap: 4px;
+border-radius: 6px;
+background: rgba(189, 189, 189, 0.15);
+border: 1px solid black;
+/* display: inline-block; */
+  padding: 10px 20px;
+  /* background-color: #007bff; */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  align-self: stretch;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border: 1.2px solid black;
+  }
+
+  .compond span {
+    color: #707070;
+text-align: center;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+  }
+
+  .icon{
+    width: 16px;
+height: 16px;
+flex-shrink: 0;
+  }
+
+  
+  .buttons{
+    gap :4px ;  
+    padding: 8px ;
+
+  }
+
+  
+  .row p {
+    /* color : blue ; */
+    text-align: center;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+  }
+
+  .msg{
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+  }
+  .msg p {
+    color : black ;
+    margin-bottom: 0px;
+  }
+  .msg b {
+    color : black;
+    font-family: poppins;
+    margin-bottom: 0px;
+  }
+
+
+  .global {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    justify-content:center;
+
+    border: 2px solid rgb(18, 10, 10);
+    /* width : 20% ; */
+    border-radius: 15px;
+    min-width: 300px;
+  
+    /* gap : 100px;  */
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+
+
+  }
+
+  .trash{
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+
+    color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  /* border: 1.2px solid black; */
+
+
+  }
+  .global  {
+    /* margin : 0.5cm ; */
+    gap : 5px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .leftSide2 b {
+    text-align: center;
+    /* border: black 2px solid; */
+  }
+
+  .leftSide2{
+    border : black solid 2px ;
+    border-radius: 20px ;
+    width : 95%;
+       display: flex;
+  justify-content: space-evenly;
+  padding: 2px;
+  }
+
+  #loggedin   {
+    /* border: solid 2px red ; */
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+
+/* * THE BIGGES ONE  */
+  .violet{
+    /* border: 0.3px solid violet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  /* * RIGHT ONE  */
+  .green{
+    /* border: 0.3px solid green; */
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    padding: 10px;
+      align-content:start;
+    gap: 5px;
+
+
+
+  }
+
+  /* * LEFT ONE */
+  .blue{
+    /* border: 0.3px solid blue; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+    gap: 10px;
+    margin-right: 5%;
+    
+
+  }
+
+  #loggedin h1{
+    font-family: poppins;
+
+
+  }

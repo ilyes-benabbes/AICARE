@@ -3,6 +3,18 @@ import Tabs from "../components/Tabs";
 import PortalDrawer from "../components/PortalDrawer";
 import { useNavigate } from "react-router-dom";
 import styles from "./LoggedInCaregiverIfProfile.module.css";
+import styles2 from "./mycss.module.css"
+import ProfileCard from "./profileCard";
+/* 
+plan :  for the caregiver
+
+1. create a card componenet  : done
+2. create the your patients( users ) components done . 
+3. your inbox component done . 
+4. the certificats component done 
+5. the calendar
+
+*/
 const LoggedInCaregiverIfProfile = () => {
   const [isTabsOpen, setTabsOpen] = useState(false);
   const navigate = useNavigate();
@@ -55,97 +67,7 @@ const LoggedInCaregiverIfProfile = () => {
         <b className={styles.yourPatients}>your patients :</b>
         <b className={styles.yourProfile}>your profile :</b>
         <b className={styles.yourCertificats}>your certificats :</b>
-        <div className={styles.autoLayoutVertical}>
-          <div className={styles.autoLayoutHorizontal}>
-            <div className={styles.frame} />
-            <div className={styles.autoLayoutHorizontal1}>
-              <b className={styles.slimaneBenabbes}>SLIMANE BENABBES</b>
-              <div className={styles.starFillParent}>
-                <div className={styles.starFill}>
-                  <img
-                    className={styles.starFillChild}
-                    alt=""
-                    src="/star-11.svg"
-                  />
-                </div>
-                <div className={styles.starFill1}>
-                  <img
-                    className={styles.starFillItem}
-                    alt=""
-                    src="/star-12.svg"
-                  />
-                </div>
-                <div className={styles.starFill1}>
-                  <img
-                    className={styles.starFillItem}
-                    alt=""
-                    src="/star-13.svg"
-                  />
-                </div>
-                <div className={styles.starFill1}>
-                  <img
-                    className={styles.starFillItem}
-                    alt=""
-                    src="/star-14.svg"
-                  />
-                </div>
-                <img className={styles.starIcon1} alt="" src="/star.svg" />
-              </div>
-            </div>
-            <div className={styles.frame1} />
-          </div>
-          <div className={styles.genderMaleParent}>
-            <div className={styles.genderMaleContainer}>
-              <span className={styles.genderMaleContainer1}>
-                <b>gender</b>
-                <span className={styles.male}> : Male</span>
-              </span>
-            </div>
-            <div className={styles.age30Container}>
-              <span className={styles.genderMaleContainer1}>
-                <b>age</b>
-                <span className={styles.male}> : 30</span>
-              </span>
-            </div>
-            <div className={styles.address300Container}>
-              <span className={styles.genderMaleContainer1}>
-                <b>address</b>
-                <span className={styles.male}> : 300 logements batna</span>
-              </span>
-            </div>
-            <div className={styles.phoneNumberContainer}>
-              <span className={styles.genderMaleContainer1}>
-                <b>phone number</b>
-                <span className={styles.male}> : 079085246</span>
-              </span>
-            </div>
-            <div className={styles.genderMaleContainer}>
-              <span className={styles.genderMaleContainer1}>
-                <b>role</b>
-                <span className={styles.male}> : Caregiver</span>
-              </span>
-            </div>
-          </div>
-          <div className={styles.accountCompletenessParent}>
-            <b className={styles.accountCompleteness}>account completeness</b>
-            <div className={styles.autoLayoutHorizontal2}>
-              <div className={styles.frame2} />
-              <div className={styles.div}>50%</div>
-            </div>
-            <button
-              className={styles.button}
-              id="login"
-              type="undefined"
-              onClick={onButtonClick}
-            >
-              <div className={styles.buttonInner}>
-                <div className={styles.logInWrapper}>
-                  <div className={styles.logIn}>{`edit `}</div>
-                </div>
-              </div>
-            </button>
-          </div>
-        </div>
+          <ProfileCard></ProfileCard>
         <div className={styles.projListParent}>
           <div className={styles.projList}>
             <div className={styles.projListChild} />

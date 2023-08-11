@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react'
 import styles from "./LoginPage.module.css";
 import styles2 from "./SignUpPage.module.css";
 import { Form} from "react-bootstrap";
-import { useLocation } from 'react-router-dom';
+import { useLocation , useNavigate} from 'react-router-dom';
 import my from "./mycss.module.css"
 import Select from "react-select";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
 
+
   
   const MyForm = () => {
+    const navigate = useNavigate();
 
     function print(e){
       console.log(fo)
@@ -104,6 +106,7 @@ import Button from 'react-bootstrap/Button';
         }).then(
             (res) => {
               console.log(res)
+              navigate("/")
             }
 
         )
