@@ -11,7 +11,9 @@ import Rating from '@mui/material/Rating';
 
 
 
-function ProfileCard() {
+function ProfileCard({user}) {
+    console.log(user)
+    console.log("above here user : ")
 
 /**
  * 
@@ -121,8 +123,8 @@ function WithLabelExample( prog) {
           <img src="/pic2.png" alt="Profile" className={styles2.image} />
           
           </div>
-            
-              <b className={styles2.bigText}>{"benabbes ilyes baha eddine the third"}</b>
+           
+              <b className={styles2.bigText}>{user.username}</b>
 
 
                 {/* RAting */}
@@ -146,32 +148,32 @@ function WithLabelExample( prog) {
 
               <span >
                 <b>Name :</b>
-                <p > {" fill here name"}</p>
+                <p > {user.name}</p>
               </span>
 
               <span >
                 <b>address :</b>
-                <p > {" fill here les alles "}</p>
+                <p > {user.address}</p>
               </span>
 
               <span >
                 <b>phone :</b>
-                <p > {" fill here aloha  "}</p>
+                <p > {user.phone}</p>
               </span>
 
               <span >
                 <b>age :</b>
-                <p > {" fill here"}</p>
+                <p > {user.dob}</p>
               </span>
 
               <span >
                 <b>gender :</b>
-                <p > {" fill here"}</p>
+                <p > {user.gender}</p>
               </span>
 
               <span >
                 <b>role :</b>
-                <p > {"  fill here"}</p>
+                <p > {user.role}</p>
               </span>
         
 

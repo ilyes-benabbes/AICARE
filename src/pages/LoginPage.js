@@ -71,6 +71,9 @@ async function handleLogin(e){
     console.log('Authorization', `Token ${response.data.key}`)
       localStorage.setItem('authToken', response.data.key);
       // const async form =
+      /**
+       * ! her get the user also  , and test if it is allset or no .
+       */
       axios.options("profile/ProfileAPIView/",  {
         headers: {
           'Content-Type': 'application/json',
