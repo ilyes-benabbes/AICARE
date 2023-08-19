@@ -1,0 +1,360 @@
+
+.testr {
+    /* border:  rgb(8, 0, 255) solid 2px; */
+    /* height: 30px; */
+    position: absolute;
+    padding: 0px;
+    
+}
+.testl {
+    border:  rgb(20, 89, 36) solid 2px;
+}
+.testa {
+    border:  #0f100b00 solid 1px;
+    display: sticky;
+    top: 200px ;
+    top: 200px ;
+}
+
+
+
+
+
+
+.scroll{    
+    /* overflow-y: scroll;  */
+    max-height: 100vh;
+    flex-direction:column-reverse;
+    max-height: 100px;
+    /* scroll-padding-top: 100%; */
+    /* flex-direction: column-reverse; */
+}
+
+.sticky{
+        position: sticky;
+        top:0px;
+        background-color: white;
+        /* border: solid 2px black; */
+        width: 100%;
+        margin: 0px;
+        /* border-radius: 1px; */
+        border-bottom: 2px solid #000;
+}
+
+.sendM{
+    position: sticky;
+        bottom:0px;
+        background-color: white;
+        padding: 1.2% 1cm;
+        padding-bottom: 1.2%;
+        border-top: 1px solid #000;
+
+}
+
+
+
+.ilyes{
+    border: black 2.5px solid;
+    min-height:90vh ;
+    max-height: 90vh;
+    position: sticky;
+    /* overflow: hidden; */
+    border-radius: 17px 17px 0px 0px;
+   
+    overflow-y: scroll;
+    top: 0px;
+    flex-direction:column-reverse;
+}
+
+
+
+.ilyes::-webkit-scrollbar {
+    width: 1px;
+  }
+
+
+
+  .ilyes::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .ilyes::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .ilyes::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img{
+    border-radius: 20%;
+    margin-left: 1cm;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button,
+input {
+  cursor: pointer;
+}
+
+
+
+
+.sign-in > img {
+  height: 30px;
+  width: auto;
+}
+.sign-out {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #88dded;
+  border: 1px solid #1c2c4c;
+  background-color: #1c2c4c;
+  font-weight: 600;
+}
+
+
+
+/* chat component */
+.messages-wrapper {
+  padding: 30px;
+  margin-bottom: 60px;
+}
+.chat-bubble {
+  border-radius: 20px 20px 20px 0px;
+  padding: 15px;
+  background-color: #b2c2bc;
+  color: #000000;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  /* box-shadow: -2px 2px 1px 1px #4c768d; */
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: 1cm;
+  /* border-radius: 12px; */
+background: #F1F1F1;
+}
+.chat-bubble.right {
+  margin-left: auto;
+  margin-right: 1cm;
+  border-radius: 20px 20px 0 20px;
+  color: white;
+  /* background-color: #e2c6c6; */
+  /* box-shadow: -2px 2px 1px 1px #88dded; */
+  /* border-radius: 12px; */
+  background: var(--primary, #8ac9a0);
+  background: var(--primary, #5679B9);
+}
+
+
+*{
+    font-family: poppins;
+}
+
+.chat-bubble__left {
+
+  width: 35px;
+
+  height: 35px;
+
+  border-radius: 20%;
+
+  /* border : solid 2px orange; */
+
+  margin-right: 10px;
+
+}
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  /* color: #1c2c4c; */
+}
+.user-message {
+  word-break: break-all;
+}
+.message-time {
+  display: block;
+  text-align: right;
+}
+
+/* send message */
+.send-message {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px 30px;
+  background-color: #4c768d;
+  display: flex;
+}
+.send-message > input {
+  height: 40px;
+  padding: 10px 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  flex-grow: 1;
+  background-color: white;
+  color: #0a46bc;
+  font-size: 1rem;
+}
+.send-message > input:placeholder {
+  color: #ddd;
+}
+.send-message > :is(input, button):focus {
+  outline: none;
+  border-bottom: 1px solid #7cc5d9;
+}
+.send-message > button {
+  width: 70px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+  color: #000000;
+  border: 1px solid #7cc5d9;
+  background-color: #7cc5d9;
+  font-weight: 600;
+}
+
+
+
+
+
+
+.Neon:hover{
+    cursor:pointer;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+
+.Neon {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #494949;
+    position: relative;
+    /* border: solid brown 2px; */
+    margin-right: 2%;
+    
+
+}
+.Neon * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.Neon-input-dragDrop {
+    display: block;
+    width: 30px;
+    height: 20px;
+    display: hidden ;
+    margin: 0 auto 25px auto;
+    padding: 25px;
+    color: #8d9499;
+    color: #97A1A8;
+    background: #fff;
+    border: 2px dashed #C8CBCE;
+    text-align: center;
+    -webkit-transition: box-shadow 0.3s, border-color 0.3s;
+    -moz-transition: box-shadow 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.Neon-input-dragDrop .Neon-input-icon {
+    font-size: 48px;
+    margin-top: -10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.Neon-input-text h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.Neon-input-text span {
+    font-size: 12px;
+}
+.Neon-input-choose-btn a {
+    cursor: pointer;
+}
+
+
+.Neon-input-choose-btn.blue {
+    color: #008BFF;
+    border: 1px solid #008BFF;
+    margin: 2px;
+    cursor: pointer;
+    margin-right: 1cm;}
+    .Neon-input-choose-btn.blue:hover {
+        color: #008BFF;
+        border: 1px solid #008BFF;
+        margin: 2px;
+        cursor: pointer;
+        margin-right: 1cm;
+}
+.Neon-input-choose-btn {
+    display: absolute ;
+    padding: 8px 14px;
+    outline: none;
+    width: 75%;
+    z-index: -2;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8d9496;
+    border-radius: 3px;
+    border: 1px solid #c6c6c6;
+    vertical-align: middle;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.05);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}

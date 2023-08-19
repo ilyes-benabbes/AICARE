@@ -19,15 +19,15 @@ import { useLocation , useNavigate} from 'react-router-dom';
  */
 
 
-function Loggedin() {
+function LoggedinTaker() {
     const location = useLocation();
     
 /**
  * !variables
  */
 
-const user = location.state;
-const [patients , setPatients] = useState({})
+const user = localStorage.getItem("thisuser")
+const [doctors , setDoctors] = useState({})
 const [isLoading, setIsLoading] = useState(true); 
 
 
@@ -41,13 +41,13 @@ const [isLoading, setIsLoading] = useState(true);
     
     
         useEffect(() => {
-            const patientsFunction = axios.get("profile/MyPatientsView/",  {
+            const docsFunction = axios.get("profile/MyCareGiversView/",  {
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Token ${localStorage.getItem("authToken")}`
               }
             }).then( res => {
-                setPatients(res.data)}
+                setDoctors(res.data)}
             )}, [])
         
    
@@ -63,11 +63,11 @@ const [isLoading, setIsLoading] = useState(true);
         //********************/
 
         useEffect(() => {
-            if (Object.keys(patients).length > 0) {
+            if (Object.keys(doctors).length > 0) {
                
                 setIsLoading(false)
             }
-          }, [patients]);
+          }, [doctors]);
 
         //*******************/
 
@@ -110,21 +110,9 @@ const [isLoading, setIsLoading] = useState(true);
 /**
  * !functions
  */
-function extractClients(listofpatients){
-    console.log(listofpatients)
+function extractSellers(listofsellers){
     const extract = []
     listofpatients.map( user =>{
-        extract.push(user.client.user)
-       
-    }
-    )
-return extract
-
-}
-
-function extractSellers(listOfsellers){
-    const extract = []
-    listOfsellers.map( user =>{
         extract.push(user.seller.user)
        
     }
@@ -132,10 +120,6 @@ function extractSellers(listOfsellers){
 return extract
 
 }
-
-
-// console.log(extractClients(patients))
-console.log("hehehe aboe extracted")
 
 
 
@@ -147,12 +131,12 @@ console.log("hehehe aboe extracted")
 
   return ( 
     <>
-    { isLoading ?  <h1>loading the patients</h1>
+    { isLoading ?  <h1>loading the caregivers</h1>
     :
 
     <div id={styles.loggedin}>
 
-        <NavbarGiver></NavbarGiver>
+        <NavbarTaker></NavbarTaker>
 
 
 
@@ -172,19 +156,7 @@ console.log("hehehe aboe extracted")
 
             <h1> your profile </h1>
             <ProfileCard user = {user}></ProfileCard>
-            <h1>your certificats</h1>
-            {/* <Cert certs={cert}></Cert> */}
-
-
-
-
-
-
-
-
-
-
-
+            
 
         </div>
 {/* here ends the left container the blue  */}
@@ -195,8 +167,8 @@ console.log("hehehe aboe extracted")
 {/* here begins the right contiainer the green  */}
     <div className={styles.green}>
 
-            <Mypatients Users={(extractClients(patients))}></Mypatients>
-            {/* <Inbox messages ={messages}></Inbox> */}
+            <Mypatients Users={(extractClients(doctors))}  type={"CareGivers"}></Mypatients>
+            <Inbox messages ={messages}></Inbox>
 
 
 
@@ -229,4 +201,4 @@ console.log("hehehe aboe extracted")
   )
 }
 
-export default Loggedin
+export default LoggedinTaker

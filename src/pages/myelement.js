@@ -47,9 +47,6 @@ export default function myelement(type) {
 
 
 
-  return (
-    <div>myelement</div>
-  )
 }
 
 }

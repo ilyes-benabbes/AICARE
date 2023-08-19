@@ -1,0 +1,111 @@
+.test{
+    border: solid green 2px;
+    border-radius: 5px;
+border: 1px solid #293691;
+background: rgba(255, 255, 255, 0.40);
+/* overflow-x: scroll; */
+}
+.testA{
+    border: solid green 2px;
+border-radius: 17px;
+border: 1px solid #293691;
+background: rgba(255, 255, 255, 0.40);
+overflow-x: scroll;
+min-width: 110vh;
+}
+.testB{
+    border: solid green 2px;
+    border-radius: 17px;
+border: 1px solid #293691;
+background: rgba(255, 255, 255, 0.40);
+overflow-y: scroll;
+height: auto !important;
+
+}
+
+
+
+
+.testB::-webkit-scrollbar {
+    width: 1px;
+  }
+
+
+
+  .testB::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .testB::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .testB::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+.titre{
+    color: #000;
+font-family: poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 25.2px; /* 148.235% */
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+}
+
+.mild{
+    background: #ECF6F7;
+    border-radius: 6px;
+    width: 45%;
+    max-width: 50%;
+    /* margin: auto; */
+    
+
+}
+
+.fort{
+    border-radius: 6px;
+background: #44A2B0;
+
+}
+
+.title.msg {
+    width:100% ;
+    text-align: start;
+    /* width: 50%; */
+    /* height: 20%; */
+    text-overflow: ellipsis;
+    overflow:hidden;
+
+    
+
+}
+
+.chat{
+    width: 80%;
+
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+.alpha{
+border: 3.1px solid #293691;
+border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(86, 121, 185);
+    /* background-color: #3498db; Change to your desired color on hover */
+    opacity: 1; /* Ensure opacity is not changed on hover */
+    /* z-index: -1
+    ; */
+  }
+
+  .btn{
+    z-index: 0;
+  }

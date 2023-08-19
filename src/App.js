@@ -19,7 +19,12 @@ import Mypatients from "./pages/Mypatients";
 import Inbox from "./pages/Inbox";
 import MyForm from "./pages/Form";
 import Cert from "./pages/Cert"
-import Loggedin from "./pages/Loggedin";
+import LoggedinCaregiver from "./pages/LoggedinGiver";
+import LoggedinCareTaker from "./pages/loggedinTaker";
+import Banner from "./components/banner";
+import Chat from "./pages/Chat";
+import Profile from "./pages/profile";
+
 
 function App() {
   const action = useNavigationType();
@@ -67,7 +72,9 @@ function App() {
 
     if (metaDescription) {
       const metaDescriptionTag = document.querySelector(
+
         'head > meta[name="description"]'
+
       );
       if (metaDescriptionTag) {
         metaDescriptionTag.content = metaDescription;
@@ -84,14 +91,18 @@ function App() {
       <Route path="/counter" element={<Counter />} />
       <Route path="/h" element={<LoggedInCaregiverIfProfile />} />
       <Route path="/my-form" element={<MyForm   />} />
-      <Route path="/card" element={<ProfileCard  />} />
+      <Route path="/card" element={<Profile  />} />
       <Route path="/mypatients" element={<Mypatients  />} />
       <Route path="/inbox" element={<Inbox  />} />
       <Route path="/cert" element={<Cert  />} />
-      <Route path="/log" element={<Loggedin  />} />
+      <Route path="/logGiver" element={<LoggedinCaregiver  />} />
+      <Route path="/logTaker" element={<LoggedinCareTaker  />} />
+      <Route path="/banner" element={<Banner  />} />
+      <Route path="/chat" element={<Chat  />} />
       
       <Route path="/File2" element={<File2 />} />
     </Routes>
   );
 }
 export default App;
+

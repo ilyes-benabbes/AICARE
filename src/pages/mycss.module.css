@@ -10,21 +10,19 @@
    }
 
    .frame{
+    margin-top: 3%;
     padding: 1cm;
-    width : 40% ;
-    height : 100%;
+    width : 50%;
+    /* height : 100%; */
     justify-content: center;
     align-items: center;
     display: flex;
     padding: auto;
-    margin : 7cm ; 
+    /* margin : 7cm ;  */
     flex-direction: column;
   
   }
-  .frame * {
-  margin-top: 10px;
-  /* width : 100% ;  */
-  }
+ 
 
   .column {
     position: relative;
@@ -414,3 +412,33 @@ font-weight: 500;
 
 
   }
+
+
+  .my * {
+    color: red;
+    
+    
+    
+  }
+  .frame * {
+    font-family: poppins; 
+    font-weight: 400 !important;
+    margin-top: 8px;
+    /* width: 80%; */
+    /* border: solid red 2px; */
+    
+    /* width : 100% ;  */
+    }
+
+    .frame {
+      border: solid green 3px;
+      align-items: stretch;
+      margin-bottom: 5%;
+    }
+    .alpha{
+      display: flex;
+      flex-direction: column;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+   /* Adjust the height based on your needs */
+    }

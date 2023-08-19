@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// last commit2 
 import styles from "./LoginPage.module.css";
 import styles2 from "./SignUpPage.module.css";
 import { Form} from "react-bootstrap";
@@ -8,18 +7,20 @@ import my from "./mycss.module.css"
 import Select from "react-select";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import Banner from '../components/banner';
 
   const MyForm = () => {
-    
-const [limit , setLimit] = useState(0)
-const [user,SetUser] = useState()
+    const thisuser = localStorage.getItem("thisuser")
+ const [banner , setBanner] = useState(false)
+ const [limit , setLimit] = useState(0)
+ const [user,SetUser] = useState()
  const [pre,setPre] = useState({})
     const [f, setF] = useState({});
     const [page, setPage] = useState(1);
     
     const [counter ,setCounter] = useState(1)
     const [ group , setGroup] = useState({})
-    const itemsPerPage = 5; 
+    const itemsPerPage = 7; 
     const [personName, setPersonName] = useState([]);
     const startIndex = (page ) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -50,31 +51,12 @@ useEffect(() => {
 
 
 
-    // useEffect(() => {
-    //   console.log("the group is fucking set ")
-    //     setGroup(getElementsFromObjectByGroup(f,page))
-    // }, [page]);
-
     const handlePageChange = (newPage) => {
       setPage(newPage);
     };
 
- useEffect(() => {
-    
-  console.log("ilyes , if 1 , it means for the firsu value ever : the zero " , limit)
-  // console.log("ilyes , if 2 , it means for the firsu value ever : the 9 ")
-}, [limit]);
 
-// useEffect(() => {
-//   if (Object.keys(pre).length > 0 && Object.keys(group).length > 0) {
-//     console.log("the gropu lengh  : " , Object.keys(group).length)
-//     console.log("the pre lengh  : " , Object.keys(pre).length)
-//     console.log(' the and are set .')
-//     // setIsLoading(false);
-//     setLimit(Math.floor(Object.keys(f).length / itemsPerPage));
-   
-//   }
-// }, [group ,  f]);
+
 useEffect(() => {
   if (Object.keys(pre).length > 0 && Object.keys(group).length > 0) {
     setLimit(Math.floor(Object.keys(f).length / itemsPerPage));
@@ -92,7 +74,6 @@ useEffect(() => {
         }
       }).then ( res => {
         console.log(res.data)
-          // SetUser(res.data.user)
           setPre(res.data)   
       }
       )   
@@ -111,10 +92,12 @@ useEffect(() => {
       console.log("the group ")
       console.log(group)
       console.log("------------")
-     
+      console.log("the Fo : ")
+      console.log(fo)
+      
+      console.log("------------")
     }
 
-    const [selectedOptions, setSelectedOptions] = useState();
  function standarizeList(list){
   if (list){
   const standard = []
@@ -136,18 +119,7 @@ useEffect(() => {
     }
 
      
-    
-      const handleChange = (event , field) => {
-        console.log(event.target.value)
-        console.log(fo)
-        setFo((prevF) => ({ ...prevF, [field]: event.target.value.slice(1) }));
-        
-        
-          const { target: { value },} = event;
-            setPersonName(   // On autofill we get a stringified value.
-                typeof value === 'string' ? value.split(',') : value,
-              );
-            };
+
           
 
    
@@ -170,8 +142,21 @@ useEffect(() => {
           },
         }).then(
             (res) => {
-              console.log(res)
-              navigate('/log', { state: user });
+      
+
+              if ( res.data.user.allset == "true") {
+
+                  if (thisuser.role == "seller")
+                  navigate('/logGiver');
+                  if (thisuser.role == "client")
+                  navigate('/logTaker');
+              }
+
+              else {
+
+              setBanner(true)
+
+              }
 
             }
         )
@@ -189,8 +174,8 @@ useEffect(() => {
 
       function getElementsFromObjectByGroup(obj, groupNumber) {
         const keys = Object.keys(obj);
-        const startIndex = (groupNumber - 1) * 5;
-        const selectedKeys = keys.slice(startIndex, startIndex + 5);
+        const startIndex = (groupNumber - 1) * itemsPerPage;
+        const selectedKeys = keys.slice(startIndex, startIndex + itemsPerPage);
         const selectedElements = {};
         for (const key of selectedKeys) {
           selectedElements[key] = obj[key];
@@ -203,18 +188,19 @@ useEffect(() => {
 
         <>
         {isLoading ? <h1>loading...</h1> : 
+            <div className={my.alpha}>
+
+          {banner  && <Banner> </Banner>}
+        <Button onClick={print}>print</Button>
         <form className={my.frame}>
         <div className={styles.hold}>
-        <Button onClick={print}>print</Button>
           {Object.keys(group).map((key) => {
                                                                   
             if (f[key].type == "choice"){ 
               return (                    
                 <>                        
                   <label                  
-                    className={           
-                      Errors.email ? styles2.errormessage : styles2.yourName
-                    }
+                   
                     >
                     {f[key].label}
                   </label>
@@ -225,10 +211,13 @@ useEffect(() => {
                     onChange={(e) =>
                       handleInputChange(key, e.target.value)
                     }
+                    defaultValue={fo[key] ? fo[key] : pre[key] }
                   >
                     <option disabled selected>------</option>
                     {f[key].choices.map((choice) => (
-                      <option key={choice.value} value={choice.value} selected={choice.value === pre[key]}>
+                      <option key={choice.value} value={choice.value} 
+                      // selected={choice.value === pre[key]}
+                      >
                       {choice.display_name}
                     </option>
                     
@@ -246,7 +235,7 @@ useEffect(() => {
                     id="email"
                     className="form-control"
                     name="email"
-                    defaultValue={pre[key]}
+                    defaultValue={fo[key] ? fo[key] : pre[key]}
                     onChange={(e) => handleInputChange(key, e.target.value , f[key].type)}
                   />
                 </>
@@ -264,7 +253,7 @@ useEffect(() => {
                     required={f[key].required}
                     type="checkbox"
                     onClick={(e) => handleInputChange(key, e.target.checked , f[key].type)}                   
-                    defaultChecked={pre[key]}
+                    defaultChecked={fo[key] != null ? fo[key] : pre[key]}
                     
                     ></input>
 
@@ -290,10 +279,12 @@ useEffect(() => {
                     }}
                     isSearchable={true}
                     isMulti
-                    defaultValue={
+                    defaultValue={ fo[key] ?
+
                       standarizeList(
-                      pre[key] )}
-                   
+                      pre[key] ) :  standarizeList(
+                        pre[key] )}
+                  //   fix this here to get the new file
 
                   />
                 </div> 
@@ -308,7 +299,8 @@ useEffect(() => {
                   <input
                     type="number"
                    placeholder={`please enter ${f[key].label}`}
-                   defaultValue={pre[key]}
+                  //  defaultValue={pre[key]}
+                  defaultValue={fo[key] ? fo[key] : pre[key]}
                     className="form-control"
                     onChange={(e) =>
                       handleInputChange(key, e.target.valueAsNumber)
@@ -320,8 +312,8 @@ useEffect(() => {
           })}
         </div>
         <Button variant='success' onClick={handlesubmit}>Submit</Button>
-      </form> }
-      <Button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
+      </form> 
+      <div  className={my.row}><Button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
           Previous Page
         </Button>
         <Button 
@@ -329,7 +321,8 @@ useEffect(() => {
         disabled={page == limit}
         >
           Next Page
-        </Button>
+        </Button></div>
+      </div>}
        </>
   )}
 

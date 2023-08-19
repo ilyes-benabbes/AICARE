@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 
-function Mypatients({Users}) {
+function Mypatients({Users , type}) {
 
 function print(e , key ,id ){
     console.log("iii")
@@ -27,7 +27,7 @@ function handleProfile(e){
 
   return (
   <>
-    <h1>My Patients</h1>
+    <h1>{ ` my ${type}s`}</h1>
     <div className={styles2.column} id={styles2.mypatients}>
 
     { 

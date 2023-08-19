@@ -3,7 +3,7 @@
 // src/index.js
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { StrictMode } from 'react';
 import { createRoot } from "react-dom/client"; // Import from "react-dom/client"
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
@@ -16,6 +16,9 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
+  <StrictMode>
+  
+
   <BrowserRouter>
     {/* <Provider store={store}> */}
       {/* <PersistGate loading={null} persistor={persistor}> */}
@@ -23,6 +26,7 @@ root.render(
       {/* </PersistGate> */}
     {/* </Provider> */}
   </BrowserRouter>
+  </StrictMode>
 );
 
 reportWebVitals();
