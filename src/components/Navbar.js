@@ -1,6 +1,8 @@
 import Button from "./Button";
 import styles from "./Navbar.module.css";
 const Navbar = () => {
+  
+
   return (
     <div className={styles.navs}>
       <div className={styles.logo}>

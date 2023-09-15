@@ -24,7 +24,7 @@ function handleProfile(e){
 
 function handleChat(e){
     const keyAttribute = e.currentTarget.getAttribute("chat");
-    navigate("/chat" , { state: convoIds[keyAttribute]} )
+    navigate("/chat" , { state: [convoIds[keyAttribute]  , keyAttribute] } )
     
 }
 

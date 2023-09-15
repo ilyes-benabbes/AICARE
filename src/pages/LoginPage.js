@@ -34,7 +34,6 @@ function print(){
 
 
 function handleInputChange(e) {
-  console.log(FormData)
   const { name, value } = e.target;
   setFormData((prevData) => ({
     ...prevData,

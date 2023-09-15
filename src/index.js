@@ -16,7 +16,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <StrictMode>
+  // <StrictMode>
   
 
   <BrowserRouter>
@@ -26,7 +26,7 @@ root.render(
       {/* </PersistGate> */}
     {/* </Provider> */}
   </BrowserRouter>
-  </StrictMode>
+  
 );
 
 reportWebVitals();

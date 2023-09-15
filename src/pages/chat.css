@@ -53,36 +53,39 @@
 
 
 
+
+
 .ilyes{
-    border: black 2.5px solid;
+    border: rgb(0, 0, 0) 4.5px solid;
     min-height:90vh ;
     max-height: 90vh;
-    position: sticky;
+    /* padding-top: 10%; */
+    /* position: sticky; */
     /* overflow: hidden; */
     border-radius: 17px 17px 0px 0px;
    
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     top: 0px;
     flex-direction:column-reverse;
 }
 
 
 
-.ilyes::-webkit-scrollbar {
+#chatWindow::-webkit-scrollbar {
     width: 1px;
   }
 
 
 
-  .ilyes::-webkit-scrollbar-track {
+  #chatWindow::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  .ilyes::-webkit-scrollbar-thumb {
+  #chatWindow::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .ilyes::-webkit-scrollbar-thumb:hover {
+  #chatWindow::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -99,6 +102,16 @@
 
 
 
+  
+.mini{
+    border: blue solid 6px;
+    position: fixed;   
+    top: 10vh;
+    position: sticky;
+    z-index: 1; /* Place it above the content */
+    background-color: lightblue;
+    padding: 10px;
+}
 
 
 
@@ -115,6 +128,9 @@
 
 
 
+.n{
+    color: transparent;
+}
 
 
 
@@ -124,13 +140,16 @@
 
 
 
-
-
-
-
-
-
-
+#chatWindow {
+    border: green 5px solid;
+    flex: 1; /* Take up remaining space */
+    background-color: lightgray;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
 
 
 
@@ -171,7 +190,7 @@ input {
   width: max-content;
   max-width: calc(100% - 50px);
   /* box-shadow: -2px 2px 1px 1px #4c768d; */
-  display: flex;
+  display: block;
   align-items: flex-start;
   margin-bottom: 20px;
   margin-left: 1cm;
@@ -184,6 +203,7 @@ background: #F1F1F1;
   border-radius: 20px 20px 0 20px;
   color: white;
   /* background-color: #e2c6c6; */
+  display: block;
   /* box-shadow: -2px 2px 1px 1px #88dded; */
   /* border-radius: 12px; */
   background: var(--primary, #8ac9a0);
@@ -240,6 +260,7 @@ background: #F1F1F1;
   background-color: white;
   color: #0a46bc;
   font-size: 1rem;
+  
 }
 .send-message > input:placeholder {
   color: #ddd;
@@ -247,6 +268,7 @@ background: #F1F1F1;
 .send-message > :is(input, button):focus {
   outline: none;
   border-bottom: 1px solid #7cc5d9;
+  
 }
 .send-message > button {
   width: 70px;
