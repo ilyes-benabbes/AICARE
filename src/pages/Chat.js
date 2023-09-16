@@ -4,6 +4,7 @@ import Inbox from "./Inbox";
 import { useLocation } from "react-router-dom";
 import NavbarGiver from "../components/NavbarGiver";
 import axios from "axios";
+import LoginPage from "./LoginPage";
 
 function Chat() {
   const [username, setUsername] = useState("username");
@@ -40,12 +41,24 @@ function Chat() {
   /**
    * * last stop is trying to fix the auto scroll
    */
+  async function login (){
+  
+    const json =  {"email":"ils1155s1yssefss4s456s@gmail.cz" , "password": "ilyes1"}
+    const res = await axios.post("/dj-rest-auth/login/", json , {
+      headers: {
+        'Content-Type': 'application/json',
+      }}).then(res => {console.log('res', res)})
+      .catch(err => {
+        console.log('err', err)
+      })
+  }
 
   /**
    *  ! hooks
    */
 
   useEffect(() => {
+      login()
     fetchData("messages/conversations/" + `${convoId}`, "get").then((data) => {
       if (data) {
         setConvo(data);
@@ -174,7 +187,7 @@ function Chat() {
   useEffect(() => {
     const element = document.getElementById("windowChat");
     if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
+    
       element.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
