@@ -192,7 +192,7 @@ function Chat() {
     }
   }, []);
 
-  // scrollToBottom()
+  
 
   const postData = async (url, json) => {
     try {

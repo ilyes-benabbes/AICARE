@@ -1,0 +1,129 @@
+@use "./abstracts" as * ;
+$o: 'Oswald';
+img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 48px;
+height: 48px;
+border-radius: 12px;
+background:  lightblue 30% / cover no-repeat;
+}
+
+// div {
+//     border: solid cyan 1px;
+// }
+
+
+.hidden{
+    display: none;
+}
+.cursor{
+    cursor: pointer;
+}
+
+body {
+    color: magenta !important ;
+}
+
+
+
+.z{
+    background-color: mediumseagreen;
+    flex: 2;
+}
+.x{
+    background-color: rgb(68, 60, 179);
+}
+.c{
+    background-color: rgb(179, 60, 98);
+}
+.cool {
+    font-family: $o ;
+    background-color: red !important;
+    color: white !important;
+}
+
+.badge{
+    display: inline-flex;
+    width: max-content;
+    background-color: $secondary;
+    border-radius: 24px;padding: 2px 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grow {
+    flex-grow: 1;
+}
+
+
+.f1 {
+    flex: 1;
+}.f2 {
+    flex: 2;
+}
+.f3 {
+    flex: 3;
+}
+
+.rest {
+    flex: auto;
+
+}
+
+.full {
+    width: 100%;
+    flex-grow: 1;
+}
+// .visible{
+//     visibility: hidden;
+// }
+.invisible{
+    visibility: hidden;
+}
+
+
+
+    p{
+    margin:0 ; 
+    padding:  0 ;}
+
+
+    .i{
+        width: 16px !important;
+        height: 16px !important;
+    }
+    .smalli{
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .placeholder {
+        color: black;
+        opacity: 0.4;
+    }
+
+
+ .border {
+    border: solid 1.2px black ;
+ }
+    
+ 
+
+ .scroll{
+    scrollbar-color: gray lightgray;
+    scrollbar-width: thin;
+ }

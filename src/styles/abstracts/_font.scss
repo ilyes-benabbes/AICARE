@@ -1,0 +1,49 @@
+@use "variables" as * ;
+
+@mixin font($size, $color, $weight) {
+  // padding: 0 0 0 0 ;
+  // display: block;
+  margin-top: auto ;
+  margin-bottom: auto ;
+  font-family: inter ;
+  font-style: normal;
+  color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  
+  // fonts 
+  .head {
+    @include font($fbig , black , $wbold) ;
+  }
+  
+
+  .chatfont{
+    @include font($fmedium , black , $wnormal) ;
+    &-w{
+      @extend .chatfont ;
+      color: white ;
+    }
+
+  }
+ 
+  
+  .minibold{
+    @include font($fmedium , black , $wbold) ;
+        &-sub {
+    @include font($fsmall , $secondary , $wbold) ;
+          
+        }
+  }
+ 
+  
+
+
+
+   
+
+
+
+
