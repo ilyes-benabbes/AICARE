@@ -1,20 +1,27 @@
 import { Mylogo } from "./sub/mylogo";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 import "../styles/navbar.scss";
 
 function navbar() {
   return (
     <>
-      <div className="Navbar drow-between">
+      <div className="Navbar drow-between ">
         <Mylogo></Mylogo>
-        <div className="head links drow g3 ">
-          <p> dashboard </p>
-          <p > home </p>
-          <p > contact us </p>
-          <p > my contracts </p>
-          <img src="vite.svg" alt="message" className="icon" />
-          
+        <div className="   links drow g3 ">
+          <Link to={"/land"} className="hover-underline-animation">
+            <p> home </p>
+          </Link>
+          <Link to={"/about"} className="hover-underline-animation">
+            <p> about us </p>
+          </Link>
+
+          <Link to={"/contact"} className="hover-underline-animation">
+            <p> contact </p>
+          </Link>
+          <Link to={"/pricing"} className="hover-underline-animation">
+            <p> pricing </p>
+          </Link>
         </div>
       </div>
     </>

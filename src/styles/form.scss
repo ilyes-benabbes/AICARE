@@ -1,0 +1,25 @@
+@use "./abstracts/variables" as * ; 
+.formpage{
+.bigtitle{
+    .sectionfont{
+        opacity: 0.5;
+    }
+}
+
+.formcontainer{
+.accordion{
+    max-width: 70%;
+    // flex-shrink: 1;
+button{
+    color : black;
+}
+
+
+
+} //! fin accordion
+
+
+} //!fin container
+
+
+} //!fin page

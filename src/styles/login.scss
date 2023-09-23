@@ -1,0 +1,21 @@
+@use "./abstracts/variables" as * ; 
+.login{
+    .logcontent{
+        justify-content: center;
+        padding-top: auto;
+        padding-bottom: auto;
+        height: auto;
+        min-height: 90vh;
+.logbox{
+    margin-top: auto;
+    border-radius: 12px;
+    margin-bottom: auto;
+    width: 30%;
+    max-height: 385px;
+    gap:1cm;
+    .btncont{
+        min-width: 100px  ; 
+    }
+}}
+
+} // end of page

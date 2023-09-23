@@ -1,0 +1,15 @@
+@use "./abstracts/variables" as * ;
+.directory{
+
+
+    .dir{
+        height: $maxh;
+    border-bottom: solid 1.2px rgba($color: #000000, $alpha: 0.08);
+
+    }
+    img{
+        background-color: lightsteelblue;
+    }
+}
+
+

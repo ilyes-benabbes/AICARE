@@ -1,127 +1,33 @@
+// import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Navbar from "../components/Navbar";
-import WHYSECTION from "../components/WHYSECTION";
-import FEEDBACK from "../components/FEEDBACK";
-import LEFTARROW from "../components/LEFTARROW";
+import Whysection from "../components/WHYSECTION";
+import Head from "../components/Head";
+import Background from "../components/Back";
 import Footer from "../components/Footer";
-import styles from "./LandingPage.module.css";
+import About from "../components/About";
+import Join from "../components/Joinus";
+import Contact from "./Contact";
 const LandingPage = () => {
+
+
+/**
+ * ! what to fix more ? 
+ * ! fix the links and make each button , take you to the next page 
+ * ! fix the nuances of the style that's left 
+ * ! that's it i think for now .
+ * ! go directly to the sign up page  
+ */
+
   return (
-    <div className={styles.landingPage}>
-      
-      {/* <div className={styles.joshAppel0nkfvdcmX4UnsplasWrapper}>
-        <img
-          className={styles.joshAppel0nkfvdcmX4UnsplasIcon}
-          alt=""
-          // src="/joshappel0nkfvdcmx4unsplash-3@2x.png"
-        />
-      </div> */}
-      {/* <img className={styles.landingPageChild} alt="" src="/polygon-1.svg" /> */}
+    <div className="landing col">
       <Navbar />
-      {/* <div className={styles.findThePerfectCareForYourParent}>
-        <b className={styles.findThePerfect}>
-          FIND THE PERFECT CARE FOR YOUR BELOVED ONES
-        </b>
-        <img
-          className={styles.joshAppel0nkfvdcmX4UnsplasIcon1}
-          alt=""
-          // src="/joshappel0nkfvdcmx4unsplash-1@2x.png"
-        />
-        <div className={styles.aicarecomIsTheContainer}>
-          <span className={styles.aicarecomIsTheContainer1}>
-            <p className={styles.aicarecomIsTheFirstToolT}>
-              <span
-                className={styles.aicarecomIsThe}
-              >{`aicare.com is the first tool that uses       `}</span>
-              <span className={styles.artificialIntelligence}>
-                Artificial Intelligence
-              </span>
-              <span>
-                {` to `}
-                <span
-                  className={styles.findTheBest}
-                >{`find the best match between caregivers and caregivers `}</span>
-              </span>
-            </p>
-            <p className={styles.p}>
-              <span>
-                <span className={styles.findTheBest}>{` `}</span>
-              </span>
-            </p>
-          </span>
-        </div>
-      </div> */}
-      {/* <div className={styles.buttonParent}>
-        <button className={styles.button}>
-          <div className={styles.buttonInner}>
-            <div className={styles.logInWrapper}>
-              <div className={styles.logIn}>{`find out more `}</div>
-            </div>
-          </div>
-        </button>
-        <img
-          className={styles.expandRightIcon}
-          alt=""
-          src="/expand-right.svg"
-        />
-        <button className={styles.button1}>
-          <div className={styles.buttonInner}>
-            <div className={styles.logInWrapper}>
-              <div className={styles.logIn}>{`Sign up for free `}</div>
-            </div>
-          </div>
-        </button>
-      </div> */}
-      {/* <div className={styles.landingPageItem} />
-      <div className={styles.whatDoWeProvideWrapper}>
-        <b className={styles.whatDoWe}>WHAT DO WE PROVIDE ?</b>
-      </div>
-      <div className={styles.landingPageInner}>
-        <div className={styles.frameParent}>
-          <div className={styles.frame18variant4Wrapper}>
-            <div className={styles.frame18variant4}>
-              {/* <img className={styles.icon} alt="" src="/icon7.svg" /> */}
-              {/* <b className={styles.lowestPricing}>Lowest pricing</b>
-              <div
-                className={styles.findTheBest1}
-              >{`find the best fees , that suits both caretakers and caregivers and maybe fill the rest of this with text or add an arrow `}</div>
-              <div className={styles.frame18variant4Child} />
-            </div> */}
-          {/* </div> */} 
-          <WHYSECTION />
-          {/* <div className={styles.frame18variant41}>
-            <div
-              className={styles.findTheBest2}
-            >{`find the best custommer support and shitload of thing with proffessionals on our website `}</div>
-            <div className={styles.frame18variant4Item} />
-            <b className={styles.customerSupport}>{`Customer support `}</b>
-            <img
-              className={styles.frame18variant4Inner}
-              alt=""
-              src="/vector-189.svg"
-            />
-          </div>
-        </div>
-      </div> */}
-      {/* <img className={styles.lineIcon} alt="" src="/line-3.svg" /> */}
-    
-      <Footer />
-      {/* <div className={styles.findTheCareYouDeserveFromParent}>
-        <b className={styles.findTheCare}>
-          Find the care you deserve from someone you trust
-        </b>
-        <button className={styles.button2}>
-          <div className={styles.frameDiv}>
-            <div className={styles.signUpContainer}>
-              <div className={styles.signUp1}>join now</div>
-            </div>
-          </div>
-        </button>
-        <img
-          className={styles.nationalCancerInstituteBxxgIcon}
-          alt=""
-          // src="/nationalcancerinstitutebxxgtqew1m4unsplash-1@2x.png"
-        /> */}
-      {/* </div> */}
+      <Head > </Head>
+      <Background></Background>
+      <Whysection></Whysection>
+      <About></About>
+      <Join></Join>
+      <Contact></Contact>
+      <Footer></Footer>
     </div>
   );
 };

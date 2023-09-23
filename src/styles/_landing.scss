@@ -1,0 +1,383 @@
+@use "../styles/abstracts/variables" as * ;
+.landing{
+
+
+
+.Content{
+    min-height: 80vh;
+    // padding-top: $space/2;
+    button{
+        width: 10%;
+        height: 100%;;
+    }
+}
+
+
+
+
+
+
+width: 100%;
+padding: 0;
+
+.header{
+    // height: 100vh ;
+    Button {
+      background-color: $secondary;
+      min-width : 100px;
+    }
+    // padding-top: 10vh;
+    // padding-left: 5vw;
+    // padding-right: 5vw;
+    width: 100%;
+    text-align: left;
+
+.bigheader {
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    button{
+        color: white;
+    }
+
+  .subheader{
+    line-height: 30px;
+    width: 40%;
+    font-weight: 400;
+span {
+    color: $primary;
+}
+
+      font-size:  25px;;
+  }
+}
+
+.imgctr{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    // top: 7vh;
+
+
+.back{
+    width: 100%;
+}
+
+
+.leftback{
+ width: 55%;
+ filter: blur(100px);
+background-color: rgba(211, 211, 211, 0.798) ;
+ position: absolute;
+ top: 3px;
+ left: 0;
+ width: 50%; /* Adjust to specify the left half of the image */
+ height: 100%;
+ object-fit: cover; /* Maintain image aspect ratio */
+ z-index: 10;
+
+}
+}
+
+.whysection{
+
+padding-top: 0;
+  height: 80vh;
+  p{
+    margin-top: 0;
+  text-align: center;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: calc($space / 2) ;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 70px;
+    height: 70px;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #140707;
+    z-index: 9;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 4s ease-in-out infinite;
+    -moz-animation:    fade_move_down 4s ease-in-out infinite;
+    animation:         fade_move_down 4s ease-in-out infinite;
+  }
+  
+  
+  /*animated scroll arrow animation*/
+  @-webkit-keyframes fade_move_down {
+    0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+  @-moz-keyframes fade_move_down {
+    0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+  @keyframes fade_move_down {
+    0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+  @keyframes fade_move_right {
+    0%   { transform:translate(0,-10px) rotate(310deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { transform:translate(0,5px) rotate(310deg); opacity: 0; }
+  }
+
+
+  .whysection{
+
+    // padding-top: 2% !important;
+        img{
+            fill: rgba(2, 108, 124, 0.19);
+stroke-width: 0.664px;
+stroke: #026C7C;
+            // background-color: green($color: green);
+            width: 60px;
+            width: 60px;
+        }
+    
+    .section{
+        max-width:  25%;
+        border-radius: 12px;
+        padding-left: 2%;
+        padding-right: 2%;
+
+        .head{
+            border-bottom: 2px black solid ;
+        }
+
+        
+  }
+
+}
+
+ 
+// the styling of the About us section : 
+.about{
+.arrow{
+  margin-left: 10%;
+}
+
+
+
+.buttons{
+  
+  margin-left: 20%;
+}
+
+  button{
+    background-color: #2f747f;
+    color: white;
+    width: auto ;
+    height: 50px;
+
+    // height: 20%;
+  }
+
+
+
+  background : url(../../public/d.jpg) ;
+  background-size:cover; /* Use "contain" to fit the image within the container */
+background-repeat:no-repeat; /* Prevent the image from repeating */
+background-position: center 25% ; 
+  // padding-top: 2%;
+  padding-bottom: 2%;
+  height: 80vh;
+  // margin-bottom: 2vh;
+
+  .header{
+    color: white;
+    text-decoration: underline;
+  }
+
+
+  .imgctr{
+    margin-top: 20vh;
+    position: -ms-page;
+    height: 60%;
+    border: red 3px solid;
+
+  }
+ 
+  
+
+  .aboutimage{
+    // max-width: 30vw;
+    width: 100%;
+    height: 40vh;
+    position: relative;
+
+    // max-height: 50% ;
+
+    &:hover{
+      background-color: black;
+      border: red 3px solid;
+    }
+  }
+
+/* CSS for the About Us Section */
+
+.aboutext{
+  // filter: blur(1px);
+  align-self: stretch;
+// background-color: rgba(211, 211, 211, 0.068) ;
+color: white;
+  padding-left: 10vw;
+  max-width: 40%;
+  font-size: x-large;
+}
+
+
+.arrow{
+  margin-top: auto ;
+  margin-bottom: auto !important;
+  position:  -ms-page !important  ;
+  text-align: center;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0;
+  width: 70px;
+  height: 70px;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ededed;
+  z-index: 9;
+  transform: translate(-50%, 0%) rotate(90deg);
+  animation:         fade_move_right 4s ease-in-out infinite;
+  -webkit-animation: fade_move_right 4s ease-in-out infinite;
+  -moz-animation:    fade_move_right 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+.join{
+  border-bottom: solid 1.2px black ;
+background-color: lightgray;
+height: min-content;
+padding-bottom: 3vh;
+padding-top: 3vh;
+color: black;
+.left{
+  width: 50%;
+}
+
+
+button{
+  // width: 20%;
+  color: white;
+  border-radius:12px ;
+  font-size: x-large;
+  // width: ;
+  height: auto;
+}
+
+} // fin du page du join 
+
+
+.contact{
+
+ background-color: lightgrey;
+ .leftside{
+   padding-top: 5%;
+   padding-left: 10%;
+   padding-right: 10%;
+
+
+
+ .form{
+  button{
+    width: 50%;
+  }
+ }
+
+
+ }
+
+
+
+
+ .rightside{
+
+  .header{
+
+    margin-bottom: 10%;
+  }
+  padding-left: 10%;
+  padding-top: 5%;
+  width: 35%;
+  .sub{
+  font-size: small ; 
+  opacity: 0.7;
+
+}
+ }
+
+
+
+} // fuin du sectin du contant
+
+.footer{
+  background-color: gray ;
+}
+
+}

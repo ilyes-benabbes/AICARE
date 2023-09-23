@@ -1,0 +1,16 @@
+@use "./abstracts/variables" as * ;
+.profilepage{
+ .profilepart{
+    width: 50%;
+ }
+
+ .profilecard{ 
+    width: 40%;
+    max-height: 80vh;
+    // position: sticky;
+    // top: 0cm;
+}
+
+
+
+}

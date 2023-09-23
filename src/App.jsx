@@ -5,8 +5,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./styles/_style.scss"; 
 
-import "./styles/_style.scss";
 
 
 
@@ -26,12 +26,18 @@ import LoggedinCareTaker from "./pages/loggedinTaker";
 import Banner from "./components/banner";
 import Chat from "./pages/Chat";
 import Profile from "./pages/profile";
+import Mychat from "./pages/chatSass";
+import { SharedDataContextProvider } from "./context/context";
+
+import Profilepage from "./pages/profilepage";
+import Contract from "./pages/Contract";
 
 
 function App() {
 
 
   return (
+    <SharedDataContextProvider>
     <Routes>
       <Route path="/land" element={<LandingPage />} />
       <Route path="/log" element={<LoginPage />} />
@@ -48,9 +54,13 @@ function App() {
       <Route path="/logTaker" element={<LoggedinCareTaker  />} />
       <Route path="/banner" element={<Banner  />} />
       <Route path="/chat" element={<Chat  />} />
+      <Route path="/mychat" element={<Mychat  />} />
+      <Route path="/profilepage" element={<Profilepage  />} />
+      <Route path="/contract" element={<Contract  />} />
       
       <Route path="/File2" element={<File2 />} />
     </Routes>
+    </SharedDataContextProvider>
   );
 }
 export default App;

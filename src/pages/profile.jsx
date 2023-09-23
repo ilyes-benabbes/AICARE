@@ -5,6 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Button } from 'react-bootstrap';
 import Rating from '@mui/material/Rating';
 import "./profile.css"
+import Middle from '../components/sub/middle';
 
 
 
@@ -12,7 +13,7 @@ import "./profile.css"
 
 
 
-function Profile({user}) {
+function Profile({user }) {
     console.log(user)
     console.log("above here user : ")
 
@@ -28,37 +29,10 @@ const RATING = 3 // if the value is not round , make it round .
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * 
 // ! HOOKS HERE 
  */
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -100,20 +74,15 @@ function WithLabelExample( prog) {
     return <ProgressBar  variant="success" className="w-75 mb-3" now={prog} label={`${prog}%`} />;
   }
 
-
-
-
-
-
   return (
 
     // <div class="container mt-4 mb-4 p-3  d-flex justify-content-center  ">
     <div class="card p-4  ">
         <div class=" image d-flex flex-column justify-content-center align-items-center">
             <button class="btnS btnS-secondary"> <img src="human.png" height="100" width="100" /></button>
-            <span class="name mt-3">Eleanor Pena</span> <span class="idd">ilyesdfsddfsdfdsbenabbes.gami.com</span>
+            <span class="name mt-3">Eleanor Pena</span> <span class="idd">{user.email}</span>
             <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                <span class="idd1">CareGiver</span> <span><i class="fa fa-copy"></i></span> </div>
+                <span class="idd1">{user.role}</span> <span><i class="fa fa-copy"></i></span> </div>
             <div class="d-flex flex-row justify-content-center align-items-center mt-3">
                 {/* <span class="number">1069 
 
@@ -135,28 +104,20 @@ function WithLabelExample( prog) {
 </p>
 
 <p >
-  <span className='idd'>age :</span>
-  <span > {" align-gn-items- ffdr.items- ffdr.dob"}</span>
+  <span className='idd'>dob :</span>
+  <span > {user.dob}</span>
 </p>
 
 <p >
   <span className='idd'>gender :</span>
-  <span > {"user.gegn-items- ffdr.nder"}</span>
+  <span > {user.gender}</span>
 </p>
 
 
 
-
-
-
 </div>
-                
-                
-                
-                
-                
-                
-                 </div>
+            
+        </div>
             <div class=" d-flex mt-2">  </div>
 
 
@@ -166,7 +127,7 @@ function WithLabelExample( prog) {
            
             
            
-            <button className="btn btn-secondary">Edit Profile</button>
+            <button className="btn btn-secondary" >Edit Profile</button>
         </div>
     </div>
     // </div>

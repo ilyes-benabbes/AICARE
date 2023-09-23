@@ -1,18 +1,17 @@
 @use "./abstracts" as * ;
 $o: 'Oswald';
-img {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 48px;
-height: 48px;
-border-radius: 12px;
-background:  lightblue 30% / cover no-repeat;
+
+
+
+
+
+body{
+    max-width: 100vw !important;
+    overflow: auto;
+    scrollbar-color: gray lightgray;
+    scrollbar-width: thin;
+    scrollbar-width: 1px;
 }
-
-// div {
-//     border: solid cyan 1px;
-// }
-
 
 .hidden{
     display: none;
@@ -21,48 +20,24 @@ background:  lightblue 30% / cover no-repeat;
     cursor: pointer;
 }
 
-body {
-    color: magenta !important ;
-}
-
-
-
 .z{
     background-color: mediumseagreen;
     flex: 2;
 }
-.x{
+.b{
     background-color: rgb(68, 60, 179);
 }
-.c{
+.r{
     background-color: rgb(179, 60, 98);
 }
-.cool {
-    font-family: $o ;
-    background-color: red !important;
-    color: white !important;
-}
+
 
 .badge{
     display: inline-flex;
     width: max-content;
-    background-color: $secondary;
+    background-color: lightcoral;
     border-radius: 24px;padding: 2px 8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .grow {
@@ -81,16 +56,13 @@ body {
 
 .rest {
     flex: auto;
-
 }
 
 .full {
     width: 100%;
     flex-grow: 1;
 }
-// .visible{
-//     visibility: hidden;
-// }
+
 .invisible{
     visibility: hidden;
 }
@@ -111,19 +83,44 @@ body {
         height: 8px !important;
     }
 
-    .placeholder {
-        color: black;
-        opacity: 0.4;
-    }
-
-
  .border {
-    border: solid 1.2px black ;
+    border: solid 1.2px black  !important ;
  }
     
- 
 
- .scroll{
+ .myscroll{
     scrollbar-color: gray lightgray;
     scrollbar-width: thin;
  }
+
+
+ .pad{
+    padding: 0 $space 0 $space;
+ }
+ .fullpad{
+    padding: $space;
+ }
+
+ .textleft{
+    text-align: center;
+ }
+
+
+ a {
+    text-decoration: none;
+ }
+
+ img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 48px;
+height: 48px;
+border-radius: 12px;
+background:  lightblue 30% / cover no-repeat;
+}
+
+
+.myplaceholder{
+    color: black;
+    opacity : 0.4 ;
+}

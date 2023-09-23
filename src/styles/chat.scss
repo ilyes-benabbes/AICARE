@@ -1,0 +1,169 @@
+@use "./abstracts/variables" as * ;
+.chat {
+
+    
+    border-right: solid 1.2px rgba($color: #000000, $alpha: 0.08);
+    border-left: solid 1.2px rgba($color: #000000, $alpha: 0.08);
+
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+    flex-grow: 1;
+        .menu {
+.leftmenu{
+    // min-height: fit-content;
+    padding: 0;
+    
+}
+
+                // padding: 0px;
+                border-bottom: solid 1.2px rgba($color: #000000, $alpha: 0.08);
+            .callbtn{
+                align-self: center;
+                margin-right: 10px;
+                border-radius: 6px;
+                height: max-content;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: transparent
+                    img {
+                        background-color: $secondary;
+                    }
+
+                *{
+                color : $primary}
+            }
+            .callbtn:hover{
+                background-color: $secondary;
+                cursor:pointer;
+            }
+
+
+
+        }
+
+.chatbox {
+                    border-bottom: solid 1.2px rgba($color: #000000, $alpha: 0.08);
+                        
+                    max-height: 100%;
+                    gap: 4px;
+                    overflow-y: auto;
+
+
+.msg-gray {
+        display: flex;
+        padding: 8px 16px;
+        align-items: flex-start;
+        gap: 10px;
+        background-color: $secondary;
+        border-radius: 12px;
+        background: #F1F1F1;
+
+
+    }
+
+    .m-me {
+
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        gap: 5px;
+        padding: 0px;
+    }
+
+    .m-freind {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+
+    }
+.msg-purple {
+    align-self: end;
+    order: -1;
+    display: flex;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: $primary;
+    border-radius: 12px;
+    background: $primary;
+
+    p {
+        color: white !important;
+    }
+
+
+}
+
+
+
+    
+}
+
+// fin du chatBox componenet
+
+
+.myinput {
+    .sendFile{
+        align-self: center;
+    }
+         height: 6vh;   
+
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} // fin du chatcomponent
+
+
+
+
+
+
+
+.img-me{
+    align-self: end;
+    overflow: hidden;
+    background-color: transparent;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 12px;
+    
+    max-width: 300px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    
+    margin-right: 40px;
+    
+}
+
+.img-him{
+    align-items: flex-start;
+    border-radius: 12px;
+    min-width: 200px;
+    min-height: 200px;
+    margin-left: 40px;
+   
+}

@@ -13,17 +13,17 @@
   /* width : 500px ; */
   /* height : 500px ; */
   text-align: center;
-  position: sticky;
+  /* position: sticky; */
   background-color: rgb(209, 144, 144);
   /* top:10px; */
-  position: absolute;
+  /* position: absolute; */
   top : 10 px;
   top : 10 px;
   /* width: 100%; */
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #e33f3fcf;
   padding: 10px;
   z-index: 100; /* Adjust this value based on your needs */
 }

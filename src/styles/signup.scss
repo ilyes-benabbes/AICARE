@@ -1,0 +1,86 @@
+@use "./abstracts/variables" as * ; 
+.signup{
+    align-items: center;
+    justify-content: center;
+    // display: ;
+.formcontainer{
+    width: 50%;
+}
+
+
+input {
+    border: solid black 1px;
+    border-radius: 3px;
+    width: 100%; 
+    height: 40px;
+    &::placeholder{
+        margin-left: 2cm;
+    }
+}
+
+
+.formcol{
+    #role , #gender {
+        border: solid black 1px;
+        width: 100%;
+        height: 40px;
+        &::placeholder{
+            opacity: 0.5px;
+        }
+    }
+
+    gap: 8px;
+    width: fit-content;
+    font-family: $p !important;
+    max-width: 400px; 
+    // max-width: 50%;
+
+.dob{
+    // width: ; 
+    border: solid;
+    border-radius: 3px;
+}}
+
+.signimg{ 
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    border: dashed black 2px;
+    border-radius: 12px;
+    margin-top: 19vh;
+    width:250px;
+    height:250px;
+    background-color: lightblue;
+    .icon {
+        width: 50px !important;
+        height: 50px  !important;
+        // margin: auto;
+    }
+
+    img{
+        width: 250px  !important;
+        height :250px !important ;
+    };
+
+
+
+}
+.remove{
+
+    align-self:center;
+        border-radius: 12px;
+        font-size: x-large ;
+        width: 30px;
+        color: white;
+        opacity: 0.9;
+
+
+}
+
+}

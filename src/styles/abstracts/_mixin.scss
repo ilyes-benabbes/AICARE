@@ -1,30 +1,43 @@
 @use "variables" as * ;
 
-// @mixin fc($gp){
 
-//   display: flex;
-//   flex-direction: column;
-//   padding-left: $gap ;  
-//   padding-right: $gap ; 
-  
-//   .i-#{$gp}{
-//     @extend .flex-column;
-//     gap : $gp ;
-//   }
-  
-// }
-// .h{
-// @include fc(5px);
 
-// }
+@mixin button ($col){
+    text-decoration: none !important;
+color: white;
+min-height: 50px;
+    font-size: 15px;
+    display: flex ;
+    padding: 0px 9px 0px 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: $col;
+    
+}
 
-// /////////////////////////////
+.btnprimary{
+    @include button($primary);
+    &.clicked{
+        background-color : lightcoral ;
+    }
+}
 
-// .flex-column {
-//     display: flex;
-//     flex-direction: column;
-//   padding: $pad ;
-//   }
+.btnsecondary{
+    @include button($secondary) ;
+    &.clicked{
+        background-color : lightcoral ;
+    }
+}
+
+.btnthird{
+    @include button(($third))
+}
+
+
+
+
 
 .g1{
     gap : $gp1 
@@ -74,11 +87,14 @@
     &-center{
         @extend .col ;
         justify-content: center;
+        align-items: center;
     }
 }
  
    
-
+.centerself{
+    align-self: center;
+}
 
 //     &-r {
 //       @extend .flex-drow ; 

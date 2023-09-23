@@ -59,7 +59,7 @@ function Chat() {
 
   useEffect(() => {
       login()
-    fetchData("messages/conversations/" + `${convoId}`, "get").then((data) => {
+    fetchData("messages/conversations/" + `${convoId}/`, "get").then((data) => {
       if (data) {
         setConvo(data);
       }
