@@ -14,6 +14,13 @@ min-height: 50px;
     flex-shrink: 0;
     border-radius: 10px;
     background: $col;
+
+
+
+
+
+
+
     
 }
 
@@ -52,7 +59,7 @@ min-height: 50px;
 }
 
 
-  .drow {
+.drow {
     width: auto ;
     display: flex;
     padding: $pad ; 
@@ -91,120 +98,61 @@ min-height: 50px;
     }
 }
  
+.dcenter {
+    display: flex;
+    flex-direction: col;
+    align-items: center;
+    justify-content: center;
+}
    
 .centerself{
     align-self: center;
 }
 
-//     &-r {
-//       @extend .flex-drow ; 
-//       margin-right: $mr;}
 
 
-//     &-l {
-//       @extend .flex-drow ; 
-//       margin-left: $ml;
-//     }
-// }
+.primarybtn{
+color: white;
+border-radius: 4px;
+border: 1px solid $primary;
+background: $primary;
+display: flex;
+padding: 11px 23.406px 13px 20px;
+align-items: center; 
+justify-content: center;
+//! font 
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 29.5px; /* 163.889% */
+&-nopad{
+    @extend .primarybtn ;
+    padding: 4px;
 
-// //////////////////////
-// //* z
-// //! hello there 
-// //* fin
-// @mixin col($gap : 0px){
-//   display: flex ;
-//   flex-direction: column ;
-//   gap : $gap ;
-// }
+}}
 
-// .col {
-//   @include col ; 
+.secondarybtn{
+color: $primary;
+border-radius: 4px;
+border: 1px solid $borderColor;
+background:white;
+display: flex;
+padding: 11px 23.406px 13px 20px;
+align-items: center;
+justify-content: center;
+&-nopad{
+    @extend .secondarybtn ;
+    padding: 4px;
+}
 
-// }
-
-// .col-1{
-//   @include col($gp1)
-// }
-
-// .col-2{
-//   @include col($gp2)
-// }
-// .col-3{
-//   @include col($gp3)
-// }
-// .col-4{
-//   @include col($gp4)
-// }
-
-
-
-
-
+//! font 
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 29.5px; /* 163.889% */
 
 
 
 
 
-
-
-// ///////////////
-
-
-
-
-
-//   .col-center{
-//     @extend .flex-column ; 
-//     align-items: center ; 
-//   }
-//   .drow-center {
-//     @extend .flex-drow ; 
-//     justify-content: center ;
-//   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .drow-center {
-//   @extend .flex-row ; 
-//   align-items: center;
-// }
-  
-// //    speparijar asjfkl; sjdkl;fj  
-
-
-
-
-
-
-  
-// .flex-center-vert {
-//     display: flex;
-//     align-items: center;
-//   }
-  
- 
-//   .g1{
-//     gap: 5px;
-//   }
- 
-//   .g2{
-//     gap: 8px;
-//   }
- 
-//   .g3{
-//     gap: 10px;
-//   }
-
+}

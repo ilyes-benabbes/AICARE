@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import "./chat.css";
 import Inbox from "./Inbox";
 import { useLocation } from "react-router-dom";
-import NavbarGiver from "../components/NavbarGiver";
 import axios from "axios";
 import LoginPage from "./LoginPage";
 
@@ -67,6 +66,8 @@ function Chat() {
   }, []);
 
   // const socket = new WebSocket('ws://localhost:8000/ws/messages/2365199a-f2c5-4609-a888-4da584ba15f9/');
+  const url = 'ws://localhost:8000/ws/messages/2d4044fe-37bd-416d-8d86-d61b96eaedc1/?token=5bf0ef9628d2745a0fbdd5f839ed681f2a1af86e';
+  const ws = new WebSocket(url);
   function runSocket() {
     // const url = `ws://localhost:8000/ws/messages/${convoId}/?token=${userToken}`;
     // const ws = new WebSocket(url);

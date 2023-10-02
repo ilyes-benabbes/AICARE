@@ -9,7 +9,7 @@ import { Profile_chat_context } from './contexts/context'
 import { useNavigate } from 'react-router-dom';
 
 import "./inbox.css"
-import { useSharedData } from '../context/context';
+import { useSharedData  , useHandleProfile} from '../context/context';
 
 function Inbox() {
   const navigate = useNavigate() 
@@ -21,10 +21,11 @@ function Inbox() {
   // console.log('invox Context', context)
   const convos = Convos
 
-  function handleProfile(e , clientId) {
+  function handleProfile(e , client) {
     // const keyAttribute = e.currentTarget.getAttribute("user");
     // alert("on profile too ?? 
-    console.log("Clicked on profileclient:", clientId);
+    // console.log("Clicked on profileclient:", clientId);
+    useHandleProfile(client)
   }
 
   function handleChat( e ,convoid ) {
@@ -36,11 +37,6 @@ function Inbox() {
   }
 
   return (<>
-    
-  
-          
-           
-
             {convos.map((convo , index) => (
 
 <div className=" d-flex flex-row  justify-content-between w-100 test">

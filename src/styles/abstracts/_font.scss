@@ -5,7 +5,7 @@
   // display: block;
   margin-top: auto ;
   margin-bottom: auto ;
-  font-family: inter ;
+  font-family: $p ;
   font-style: normal;
   color: $color;
     font-size: $size;
@@ -75,4 +75,69 @@ font-size: 4.407rem;
   font-family: $o;
 }
 
+//! new fonts 
+.containertitle{
+  color: #000;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 35px */
+  &-small { //! this is for the card title
+    color: #000;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 25.2px; /* 148.235% */
+  }
 
+}
+
+.thicktitle{
+  color: #212121;
+text-align: center;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 900;
+line-height: 140%; /* 33.6px */
+letter-spacing: 0.24px;
+&-sub {
+  color: $borderColor;
+text-align: center;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 900;
+line-height: 140%; /* 33.6px */
+letter-spacing: 0.24px;
+}
+}
+
+.pagetitle{
+  color: black;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 22.4px */
+&-selected {
+  color: $primary;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 22.4px */
+
+}
+}
+
+.cardFont{
+  color: #000;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 25.2px; /* 148.235% */
+}

@@ -1,0 +1,134 @@
+@use "../styles/abstracts/variables" as * ;
+.calendarPage{
+
+width: 100%;
+// background-color: lightcoral;
+
+.theCalendar
+{
+    width: 100%;
+
+
+.react-calendar{
+    border:  solid 2px purple !important;
+    width: 20cm;
+    margin: 0 auto 0 auto ;
+    padding: 10px ;
+
+    .react-calendar__tile--hasActive{
+        background-color: $primary ;
+        border-radius: 25px;
+        &:hover , &:focus{
+            background-color: rgb(219, 116, 219);
+
+        }
+    }
+} 
+
+
+
+
+
+
+
+
+
+    
+
+// .rmdp-week{
+//     min-width : 400px;
+//     border-right: black solid 2px;
+//     // margin-left: 25px;
+//     // padding-right: 40px;
+
+// }
+
+// .rmdp-top-class {
+//     padding: 20px;
+//     width: 1000px;
+//     // border: solid 2px rgb(24, 5, 93);
+//     .rmdp-calendar{
+//         // border: solid 2px green;
+//         display: flex;
+//         flex-direction: column;
+//         gap : 10px;
+//         margin : auto;
+//         width: 100%;
+// }
+// }
+
+
+   
+    // div {
+    //     // height: auto;
+    // }
+    
+   
+
+
+
+
+
+}//! end of the calendar part
+
+.meetings{
+    background-color: white;
+        
+    border-radius: 20px;
+    padding: 2%;
+}
+
+}//! end of calendar page
+
+
+
+// .reactCal{
+//     color : purple ;
+//     width: 450px;
+//     // display: flex;
+//     border: solid 3px rgb(128, 0, 0) ;
+    
+//     .react-calendar{
+//         width: fit-content;
+//         border: solid 3px rgb(128, 0, 0) ;
+//     }
+
+
+
+
+
+
+
+//     // flex-direction: row;
+//     .react-calendar__month-view__days{
+//         border: solid 2px rgb(128, 0, 0) ;
+//         width: 700px;
+//         height: 500px;
+//     }
+
+
+
+// //     .tile{
+// // color: red;
+// // border-radius: 50%;
+// // width: 50px !important;
+
+// //     }
+
+// .selectedDay{
+//     color : white ; 
+//     border-radius: 50%;
+//     width: 40px;
+//     height: 40px;
+//     background-color: $primary;
+// }
+// .tile{
+//     color : black ; 
+//     border-radius: 50%;
+//     width: 40px;
+//     height: 40px;
+//     background-color: white;
+// }
+
+
+// }

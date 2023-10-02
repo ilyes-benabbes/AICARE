@@ -1,0 +1,12 @@
+@use "./abstracts/variables" as * ;
+
+.contractsPage{
+    padding: 3px;
+    .contractsContainer{
+        border-radius: 20px;
+        max-height: 50vh;
+        overflow-y: auto;
+        border-radius: 12px;
+        background-color: white;
+    }
+}

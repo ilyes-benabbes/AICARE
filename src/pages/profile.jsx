@@ -5,7 +5,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Button } from 'react-bootstrap';
 import Rating from '@mui/material/Rating';
 import "./profile.css"
-import Middle from '../components/sub/middle';
 
 
 
@@ -14,8 +13,8 @@ import Middle from '../components/sub/middle';
 
 
 function Profile({user }) {
-    console.log(user)
-    console.log("above here user : ")
+
+    
 
 /**
  * 

@@ -6,7 +6,7 @@ import Mypatients from './Mypatients'
 import styles from "./mycss.module.css"
 import axios from "axios"
 import Navbar from '../components/Navbar'
-import NavbarGiver from '../components/NavbarGiver'
+
 import { useLocation , useNavigate} from 'react-router-dom';
 
 /**

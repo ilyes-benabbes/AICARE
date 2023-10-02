@@ -1,0 +1,269 @@
+@use "./abstracts/variables" as * ;
+
+
+
+//! the fucking navbar is alone 
+.loggedNavbar{
+    margin: 0;
+    background-color: white;
+    position:sticky;
+    z-index: 10000;
+    top :0px ;
+    height: 10vh;
+    img{
+        width: 30px;
+        height: 30px;
+        background:  transparent 30% / cover no-repeat !important;
+    }
+    .navicon{
+        object-fit: none ;
+        width: 30px;
+        height: 30px;
+    
+        
+    }
+
+    .dropDownMenu{
+        background-color: white;
+        position: absolute;
+        gap : 5px ;
+        top: 10vh;
+        right: $space;
+        .navicon{
+            object-fit: none ;
+            border-radius: 0px;
+
+        } 
+        .out {
+            margin-left: 2px;
+        }
+       
+        }
+    }
+
+
+.mylayout{ 
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    .layoutContainer{
+
+        padding: 0px;
+    }
+
+.drow{
+}
+
+
+    .myRightSide{
+        margin: 0;
+        // padding: 5px;
+        // border-radius: 25px;
+        overflow: hidden;
+        background-color: #DCD4D9;
+        flex :3 ;
+        overflow-x: auto;
+    }
+
+    .sidebar{
+
+        .sidebaricon{
+            max-width: 30px !important;
+            max-height: 30px !important;
+            object-fit: none;
+            border-radius: 0;
+        }
+     height: 90vh ;
+        flex : 1 ;
+    //   max-width: 30%;
+    //   min-width: 30%;
+      position: sticky;
+      top: 10vh;
+      left: 0;
+      z-index: 500;
+        .personaldetails{
+             
+            max-height: 40% ;
+    
+                .nameRole {
+                    max-height: fit-content;
+                    // max-height: 50px;
+                }
+    
+        }
+    
+       
+        .links{
+    .linkitem {
+        opacity: 1;
+    }
+           
+        }
+      
+    
+       }
+}
+
+//! the real loggedPage
+
+.dashboardPage{
+
+
+    .rightroundCircle{
+     
+    .rightArrow{
+        object-fit: none;
+        transform: rotate(320deg);
+        margin: auto;
+        
+}
+
+        max-width: 1.5cm !important;
+        max-height: 1.5cm !important;
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        z-index: 100;           
+        text-decoration: none;
+        text-shadow: 0;
+      
+        border: solid 1px black;
+        border-radius: 50%;
+        // border-bottom: 2px solid #000000;
+        // border-right: 2px solid #140707;
+        z-index: 9;
+        position: absolute;
+        right: 5% ;
+        top: 50%;
+        -webkit-transform: translate(0%, 0%) rotate(310deg);
+        -moz-transform: translate(0%, 0%) rotate(310deg);
+        transform: translate(0%, 0%) rotate(310deg);
+        -webkit-animation: fade_move_down 4s ease-in-out infinite;
+        -moz-animation:    fade_move_down 3s ease-in-out infinite;
+        animation:         fade_move_down 4s ease-in-out infinite;
+        background-color: rgb(197, 195, 191);
+        overflow: hidden;
+    }
+
+.leftroundCircle{
+    max-width: 1.5cm !important;
+    max-height: 1.5cm !important;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;           
+    text-decoration: none;
+    text-shadow: 0;
+  
+    border: solid 1px black;
+    border-radius: 50%;
+    // border-bottom: 2px solid #000000;
+    // border-right: 2px solid #140707;
+    z-index: 9;
+    position: absolute;
+    left: 5% ;
+    top: 50%;
+    -webkit-transform: translate(0%, 0%) rotate(310deg);
+    -moz-transform: translate(0%, 0%) rotate(310deg);
+    transform: translate(0%, 0%) rotate(310deg);
+    -webkit-animation: fade_move_down 4s ease-in-out infinite;
+    -moz-animation:    fade_move_down 3s ease-in-out infinite;
+    animation:         fade_move_down 4s ease-in-out infinite;
+    background-color: rgb(197, 195, 191);
+    overflow: hidden; 
+
+    .leftArrow{
+        object-fit: none;
+        transform: rotate(145deg);
+        margin: auto;
+        
+}
+
+
+}
+
+
+
+
+
+
+      
+      /*animated scroll arrow animation*/
+      @-webkit-keyframes fade_move_down {
+        0%   { -webkit-transform:translate(0,0) rotate(310deg); opacity: 0;  }
+        50%  { opacity: 1;  }
+        100% { -webkit-transform:translate(0,0) rotate(310deg); opacity: 0; }
+      }
+      @-moz-keyframes fade_move_down {
+        0%   { -moz-transform:translate(0,0) rotate(310deg); opacity: 0;  }
+        50%  { opacity: 1;  }
+        100% { -moz-transform:translate(0,10px) rotate(310deg); opacity: 0; }
+      }
+      @keyframes fade_move_down {
+        0%   { transform:translate(0,0) rotate(310deg); opacity: 0;  }
+        50%  { opacity: 1;  }
+        100% { transform:translate(0,0px) rotate(310deg); opacity: 0; }
+      }
+      @keyframes fade_move_right {
+        0%   { transform:translate(0,0) rotate(310deg); opacity: 0;  }
+        50%  { opacity: 1;  }
+        100% { transform:translate(0,0px) rotate(310deg); opacity: 0; }
+      }
+    
+
+
+
+
+    .clients{
+
+.profile {
+    border-bottom: solid 1.5px lightgray;
+}
+
+img {
+    border: $primary solid 2px;
+}
+        .name {
+            padding: 0;
+        }
+        background-color: white;
+        
+        border-radius: 20px;
+        padding: 2%;
+
+        position: relative;
+
+    .cardsrow{
+        overflow-y: auto;
+        border-radius: 25px;
+.clientcard{
+    .cardFont{
+        max-width: 70%;
+        text-align: center;
+    }
+button {
+    // justify-content: space-around;
+    padding: 2%;
+    min-width: 200px ;
+    img{
+        width: 17px;
+        height: 17px;
+    };
+}
+border: solid 2px black;
+display: flex;
+min-width: 315px;
+height: 370px;
+padding: 5px 0px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 6px;
+border-radius: 20px;
+border: 2px solid #C9C9C9;
+background: rgba(255, 255, 255, 0);
+}
+    }
+}
+
+}

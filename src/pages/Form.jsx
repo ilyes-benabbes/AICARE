@@ -9,8 +9,8 @@ import Select from "react-select";
 import axios from 'axios';
 import Navbar from '../components/Navbar'
 import Button from 'react-bootstrap/Button';
-import MyButton from '../components/sub/Button';
 import Banner from '../components/banner';
+import {PROFILE_OPTIONS_API} from './reducers/common' ;
 // import Accordion from 'react-bootstrap/Accordion';
 //?----------------
 import Accordion from '@mui/material/Accordion';
@@ -22,31 +22,27 @@ import Typography from '@mui/material/Typography';
 const MyForm = () => {
 
     //! states 
+    //* the form template gotten by options
     const [f, setF] = useState({});
+    //* THE FORM THAT I AM FILLING NOW , THIS WILL BE POSTED
     const [fo, setFo] = useState({});
+    //* prepopulated fomr
     const [pre,setPre] = useState({})
 
 
     const [banner , setBanner] = useState(false)
     const thisuser = localStorage.getItem("thisuser")
- const [limit , setLimit] = useState(0)
- const [user,SetUser] = useState()
     const [page, setPage] = useState(1);
-    
-    const [counter ,setCounter] = useState(1)
     const [ group , setGroup] = useState({})
     const itemsPerPage = 7; 
-    const [personName, setPersonName] = useState([]);
     const startIndex = (page ) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentPageFields = Object.values(f).slice(startIndex, endIndex);
     const navigate = useNavigate();
     const [Errors, setErrors] = useState({});
 
     const location = useLocation();
     const stateData = location.state;
     const [isLoading, setIsLoading] = useState(true); 
-    const [isClicked, setIsClicked] = useState(false);
 
    
 
@@ -62,7 +58,7 @@ useEffect(() => {
 //***************** */
 
 useEffect(() => {
-  const prepopulate = axios.get("api/profile/ProfileAPIView/",  {
+  const prepopulate = axios.get( PROFILE_OPTIONS_API,  {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Token ${localStorage.getItem("authToken")}`
@@ -79,24 +75,11 @@ useEffect(() => {
 
     useEffect(() => {
   setF(JSON.parse(localStorage.getItem("form")));
+  
 }, []);
 
 //***************** */
-// useEffect(() => {
-//   if (f) {
-//     setGroup(getElementsFromObjectByGroup(f, page));
-//   }
-// }, [page , f]);
-
-//***************** */
 //! FUNCTIONS BEGINS FROM HERE 
-
-
-//********************** */
-
-
-      //********************** */
-     
 
     function print(e){
       e.preventDefault()
@@ -126,10 +109,7 @@ useEffect(() => {
     } )
   return  standard }
  }
- 
       //********************** */
-
-
     function handleSelect(data , fieldname) {
       const mylist = []
       data.map((item) => {
@@ -143,16 +123,14 @@ useEffect(() => {
       const handleInputChange = (field, value , type) => {    
         setFo((prevF) => ({ ...prevF, [field]: value }));
       };
-
-     
       //********************** */
       
+      //! this is where to send the current form .
       async function handlesubmit(e){
         e.preventDefault()    
-        console.log(fo)
         const json = JSON.stringify(fo)
       
-        const response = await axios.put("api/profile/ProfileAPIView/", json, {
+        const response = await axios.put(PROFILE_OPTIONS_API, json, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Token ${localStorage.getItem("authToken")}`    
@@ -160,7 +138,7 @@ useEffect(() => {
         }).then(
             (res) => {
               if ( res.data.user.allset == "true") {
-
+                      //! modify the all set state in local storage.
                   if (thisuser.role == "seller")
                   navigate('/logGiver');
                   if (thisuser.role == "client")
@@ -178,31 +156,12 @@ useEffect(() => {
       }
     
       //********************** */
+  
 
-
-      function getElementsFromObjectByGroup(obj, groupNumber) {
-        const keys = Object.keys(obj);
-        const startIndex = (groupNumber - 1) * itemsPerPage;
-        const selectedKeys = keys.slice(startIndex, startIndex + itemsPerPage);
-        const selectedElements = {};
-        for (const key of selectedKeys) {
-          selectedElements[key] = obj[key];
-        }
-      
-        return selectedElements;
-      }
-
-
-
-      
 //!-----------------------------------------------------
 
-// ?? ************* beginign of the fucking componenet ***********
+// ?? ************* beginign of the  componenet ***********
 //!-----------------------------------------------------
-
-
-
-
 
 
       return (
@@ -224,6 +183,8 @@ useEffect(() => {
           <div className="accordion col pad g2">
               
           {Object.keys(f).map((mainkey) => {
+            console.log('mainkey', mainkey)
+            console.log('f[mainkey]', f[mainkey])
             return  (
               <Accordion>
               <AccordionSummary
@@ -242,12 +203,9 @@ useEffect(() => {
 
         <AccordionDetails>
  
-{f[mainkey].map((item) => {
-return (
-  <>
-{Object.keys(item).map((key) => {
-    const obj = item[key]
 
+{Object.keys(f[mainkey]).map((key) => {
+    const obj = f[mainkey][key] ;
         if (obj.type == "choice"){ 
           return (                    
             <>                        
@@ -317,7 +275,7 @@ return (
             <label>{obj.label}</label>
               <Select
                 options={standarizeList(
-                  f[obj.label.toLowerCase().replace(/\s/g, "")]
+                  obj.options
                 )}
                 placeholder= {obj.label}
                 onChange={(e) => {
@@ -350,6 +308,8 @@ return (
                placeholder={`please enter ${obj.label}`}
               //  defaultValue={pre[key]}
               defaultValue={fo[key] ? fo[key] : pre[key]}
+              //  it is maybe gonna be pre[mainkey][item][key].value , or something like that for all of them 
+              // 
                 className="form-control"
                 onChange={(e) =>
                   handleInputChange(key, e.target.valueAsNumber)
@@ -360,9 +320,7 @@ return (
         }
 
           })}
-</>
-)
-}) }
+
  
         </AccordionDetails>
 

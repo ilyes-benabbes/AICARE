@@ -7,16 +7,17 @@ import Rating from "@mui/material/Rating";
 import Contract from "./Contract";
 import "./inbox.css";
 import { useNavigate } from "react-router-dom";
-import { Profile_chat_context } from './contexts/context'
 
 import { useContext ,  } from 'react';
 import { useSharedData } from "../context/context";
 
+
+
 function Clients() {
-  const context = useContext(Profile_chat_context) ;
+  // const context = useContext(Profile_chat_context) ;
 //! in the case of caregiver , else , we do context.sellers
-const {Convos , Allaccount} = useSharedData()
-const contracts = context.allAccounts
+const {allAccounts} = useSharedData()
+const contracts = allAccounts
 
 
 
@@ -54,9 +55,6 @@ const contracts = context.allAccounts
 
             const contractkey = Object.keys(contract)[0]
             const user = contract[contractkey].theclient 
-            console.log('contract_key', user)
-
-
           return(
           <div className="d-flex flex-column align-items-center justify-content-center p-1 gap-2 test col-6">
             <div className="d-flex flex-column align-items-center justify-content-center p-1 gap-2">

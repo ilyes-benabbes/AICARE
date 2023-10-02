@@ -97,623 +97,1281 @@ const LoginPage = () => {
                   // console.log("data", data);
                   //! check this later , it was changed from data.Put...
                  //! var formbefore = JSON.stringify(data.all_categories); tell slimane to fix it later , without using the options api , or make it ready and deliver it with an get call , how to do that i don't know really i hope we will find a fix for it soon.
-                 const form = {
+                //  const form = {
+                //   "all_categories": {
+                //     "Situation": [{
+                //         "need": {
+                //           "type": "string",
+                //           "required": true,
+                //           "read_only": false,
+                //           "label": "Need",
+                //           "max_length": 45
+                //         }
+                //       },
+                //       {
+                //         "sickness_severity": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Sickness Severity",
+                //           "choices": [{
+                //               "value": "severe",
+                //               "display_name": "Severe"
+                //             },
+                //             {
+                //               "value": "medium",
+                //               "display_name": "Medium"
+                //             },
+                //             {
+                //               "value": "stable",
+                //               "display_name": "Stable"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "mental_state": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Mental Status",
+                //           "choices": [{
+                //               "value": "sharp",
+                //               "display_name": "Sharp"
+                //             },
+                //             {
+                //               "value": "confused",
+                //               "display_name": "Confused"
+                //             },
+                //             {
+                //               "value": "mild dementia",
+                //               "display_name": "Mild Dementia"
+                //             },
+                //             {
+                //               "value": "severe dementia",
+                //               "display_name": "Severe Dementia"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "medical_condition": {
+                //           "type": "field",
+                //           "required": false,
+                //           "read_only": true,
+                //           "label": "Medical condition",
+                //           "child": {
+                //             "type": "nested object",
+                //             "required": false,
+                //             "read_only": true,
+                //             "children": {
+                //               "id": {
+                //                 "type": "integer",
+                //                 "required": false,
+                //                 "read_only": true,
+                //                 "label": "ID"
+                //               },
+                //               "name": {
+                //                 "type": "string",
+                //                 "required": true,
+                //                 "read_only": false,
+                //                 "label": "Name",
+                //                 "max_length": 100
+                //               }
+                //             }
+                //           }
+                //         }
+                //       },
+                //       {
+                //         "aggression": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Aggression"
+                //         }
+                //       },
+                //       {
+                //         "hearing": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Hearing",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "vision": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Vision",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "speech": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Speech",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "standing": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Standing",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             },
+                //             {
+                //               "value": "unable",
+                //               "display_name": "Unable to stand alone, needs help"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "walking": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Walking",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             },
+                //             {
+                //               "value": "unable",
+                //               "display_name": "Unable to walk"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "assistive_devices": {
+                //           "type": "field",
+                //           "required": false,
+                //           "read_only": true,
+                //           "label": "Assistive devices",
+                //           "child": {
+                //             "type": "nested object",
+                //             "required": false,
+                //             "read_only": true,
+                //             "children": {
+                //               "id": {
+                //                 "type": "integer",
+                //                 "required": false,
+                //                 "read_only": true,
+                //                 "label": "ID"
+                //               },
+                //               "name": {
+                //                 "type": "string",
+                //                 "required": true,
+                //                 "read_only": false,
+                //                 "label": "Name",
+                //                 "max_length": 100
+                //               }
+                //             }
+                //           }
+                //         }
+                //       },
+                //       {
+                //         "personal_hygiene": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Personal Hygiene",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             },
+                //             {
+                //               "value": "unable",
+                //               "display_name": "Unable to perform"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "eating": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Eating",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             },
+                //             {
+                //               "value": "unable",
+                //               "display_name": "Unable to eat"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "drinking": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Drinking",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             },
+                //             {
+                //               "value": "unable",
+                //               "display_name": "Unable to drink"
+                //             },
+                //             {
+                //               "value": "peg-tube",
+                //               "display_name": "PEG tube"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "urinary_incontinence": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Urinary Incontinence"
+                //         }
+                //       },
+                //       {
+                //         "fecal_incontinence": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Fecal Incontinence"
+                //         }
+                //       },
+                //       {
+                //         "assistive_devices2": {
+                //           "type": "field",
+                //           "required": false,
+                //           "read_only": true,
+                //           "label": "Assistive devices2",
+                //           "child": {
+                //             "type": "nested object",
+                //             "required": false,
+                //             "read_only": true,
+                //             "children": {
+                //               "id": {
+                //                 "type": "integer",
+                //                 "required": false,
+                //                 "read_only": true,
+                //                 "label": "ID"
+                //               },
+                //               "name": {
+                //                 "type": "string",
+                //                 "required": true,
+                //                 "read_only": false,
+                //                 "label": "Name",
+                //                 "max_length": 100
+                //               }
+                //             }
+                //           }
+                //         }
+                //       },
+                //       {
+                //         "special_activities": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Special Activities",
+                //           "choices": [{
+                //               "value": "mobilizing",
+                //               "display_name": "Mobilizing"
+                //             },
+                //             {
+                //               "value": "antithrombotic-injections",
+                //               "display_name": "Subcutaneous injections (antithrombotic)"
+                //             },
+                //             {
+                //               "value": "insulin-injections",
+                //               "display_name": "Subcutaneous injections (insulin)"
+                //             },
+                //             {
+                //               "value": "transfer",
+                //               "display_name": "Transfer from bed to wheelchair"
+                //             }
+                //           ]
+                //         }
+                //       }
+                //     ],
+                //     "Environment": [{
+                //         "environment": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Environment and Accommodation",
+                //           "choices": [{
+                //               "value": "house",
+                //               "display_name": "House"
+                //             },
+                //             {
+                //               "value": "apartment",
+                //               "display_name": "Apartment"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "elevator": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Elevator"
+                //         }
+                //       },
+                //       {
+                //         "size": {
+                //           "type": "integer",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Size in m2",
+                //           "min_value": -2147483648,
+                //           "max_value": 2147483647
+                //         }
+                //       },
+                //       {
+                //         "location": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Location",
+                //           "choices": [{
+                //               "value": "city",
+                //               "display_name": "City"
+                //             },
+                //             {
+                //               "value": "country",
+                //               "display_name": "Country"
+                //             },
+                //             {
+                //               "value": "suburb",
+                //               "display_name": "Suburb"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "bathroom": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Bathroom",
+                //           "choices": [{
+                //               "value": "private_bathroom",
+                //               "display_name": "Private Bathroom/Toilet"
+                //             },
+                //             {
+                //               "value": "private_bathroom_shared_toilet",
+                //               "display_name": "Private Bathroom, Shared Toilet"
+                //             },
+                //             {
+                //               "value": "shared_bathroom_toilet",
+                //               "display_name": "Shared Bathroom and Toilet"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "bedroom": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Bedroom",
+                //           "choices": [{
+                //               "value": "private_bedroom",
+                //               "display_name": "Private Bedroom"
+                //             },
+                //             {
+                //               "value": "couch",
+                //               "display_name": "Couch"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "television": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Television"
+                //         }
+                //       },
+                //       {
+                //         "wifi_internet": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "WiFi/Internet"
+                //         }
+                //       },
+                //       {
+                //         "pets": {
+                //           "type": "boolean",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Pets"
+                //         }
+                //       }
+                //     ],
+                //     "Caregiver Requirements": [{
+                //         "caregiver_requirements": {
+                //           "type": "string",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Requirements for Caregiver from Patient's Side"
+                //         }
+                //       },
+                //       {
+                //         "driver_license": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Driver's License",
+                //           "choices": [{
+                //               "value": "yes",
+                //               "display_name": "Yes"
+                //             },
+                //             {
+                //               "value": "no",
+                //               "display_name": "No"
+                //             },
+                //             {
+                //               "value": "doesnt_matter",
+                //               "display_name": "Doesn't Matter"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "gender": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Gender",
+                //           "choices": [{
+                //               "value": "male",
+                //               "display_name": "Male"
+                //             },
+                //             {
+                //               "value": "female",
+                //               "display_name": "Female"
+                //             },
+                //             {
+                //               "value": "doesnt_matter",
+                //               "display_name": "Doesn't Matter"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "qualification": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Qualification",
+                //           "choices": [{
+                //               "value": "good",
+                //               "display_name": "Good"
+                //             },
+                //             {
+                //               "value": "fair",
+                //               "display_name": "Fair"
+                //             },
+                //             {
+                //               "value": "poor",
+                //               "display_name": "Poor"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "smoker": {
+                //           "type": "choice",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Smoker",
+                //           "choices": [{
+                //               "value": "yes",
+                //               "display_name": "Yes"
+                //             },
+                //             {
+                //               "value": "no",
+                //               "display_name": "No"
+                //             },
+                //             {
+                //               "value": "doesnt_matter",
+                //               "display_name": "Doesn't Matter"
+                //             }
+                //           ]
+                //         }
+                //       },
+                //       {
+                //         "age_of_caregiver_min": {
+                //           "type": "integer",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Minimum age of Caregiver",
+                //           "min_value": -2147483648,
+                //           "max_value": 2147483647
+                //         }
+                //       },
+                //       {
+                //         "age_of_caregiver_max": {
+                //           "type": "integer",
+                //           "required": false,
+                //           "read_only": false,
+                //           "label": "Maximum Age of Caregiver",
+                //           "min_value": -2147483648,
+                //           "max_value": 2147483647
+                //         }
+                //       }
+                //     ]
+                //   }
+                // }
+                const form =
+                {
                   "all_categories": {
-                    "Situation": [{
-                        "need": {
-                          "type": "string",
-                          "required": true,
-                          "read_only": false,
-                          "label": "Need",
-                          "max_length": 45
-                        }
-                      },
-                      {
-                        "sickness_severity": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Sickness Severity",
-                          "choices": [{
-                              "value": "severe",
-                              "display_name": "Severe"
-                            },
-                            {
-                              "value": "medium",
-                              "display_name": "Medium"
-                            },
-                            {
-                              "value": "stable",
-                              "display_name": "Stable"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "mental_state": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Mental Status",
-                          "choices": [{
-                              "value": "sharp",
-                              "display_name": "Sharp"
-                            },
-                            {
-                              "value": "confused",
-                              "display_name": "Confused"
-                            },
-                            {
-                              "value": "mild dementia",
-                              "display_name": "Mild Dementia"
-                            },
-                            {
-                              "value": "severe dementia",
-                              "display_name": "Severe Dementia"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "medical_condition": {
-                          "type": "field",
-                          "required": false,
-                          "read_only": true,
-                          "label": "Medical condition",
-                          "child": {
-                            "type": "nested object",
-                            "required": false,
-                            "read_only": true,
-                            "children": {
-                              "id": {
-                                "type": "integer",
-                                "required": false,
-                                "read_only": true,
-                                "label": "ID"
+                      "Situation": {
+                          "need": {
+                              "type": "string",
+                              "required": true,
+                              "read_only": false,
+                              "label": "Need",
+                              "max_length": 45
+                          },
+                          "weight": {
+                              "type": "integer",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Weight in Kg",
+                              "min_value": -2147483648,
+                              "max_value": 2147483647
+                          },
+                          "sickness_severity": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Sickness Severity",
+                              "choices": [
+                                  {
+                                      "value": "severe",
+                                      "display_name": "Severe"
+                                  },
+                                  {
+                                      "value": "medium",
+                                      "display_name": "Medium"
+                                  },
+                                  {
+                                      "value": "stable",
+                                      "display_name": "Stable"
+                                  }
+                              ]
+                          },
+                          "mental_state": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Mental Status",
+                              "choices": [
+                                  {
+                                      "value": "sharp",
+                                      "display_name": "Sharp"
+                                  },
+                                  {
+                                      "value": "confused",
+                                      "display_name": "Confused"
+                                  },
+                                  {
+                                      "value": "mild dementia",
+                                      "display_name": "Mild Dementia"
+                                  },
+                                  {
+                                      "value": "severe dementia",
+                                      "display_name": "Severe Dementia"
+                                  }
+                              ]
+                          },
+                          "medical_condition": {
+                              "type": "field",
+                              "required": false,
+                              "read_only": true,
+                              "label": "Medical condition",
+                              "child": {
+                                  "type": "nested object",
+                                  "required": false,
+                                  "read_only": true,
+                                  "children": {
+                                      "id": {
+                                          "type": "integer",
+                                          "required": false,
+                                          "read_only": true,
+                                          "label": "ID"
+                                      },
+                                      "name": {
+                                          "type": "string",
+                                          "required": true,
+                                          "read_only": false,
+                                          "label": "Name",
+                                          "max_length": 100
+                                      }
+                                  }
                               },
-                              "name": {
-                                "type": "string",
-                                "required": true,
-                                "read_only": false,
-                                "label": "Name",
-                                "max_length": 100
-                              }
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "aggression": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Aggression"
-                        }
-                      },
-                      {
-                        "hearing": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Hearing",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "vision": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Vision",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "speech": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Speech",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "standing": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Standing",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            },
-                            {
-                              "value": "unable",
-                              "display_name": "Unable to stand alone, needs help"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "walking": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Walking",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            },
-                            {
-                              "value": "unable",
-                              "display_name": "Unable to walk"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "assistive_devices": {
-                          "type": "field",
-                          "required": false,
-                          "read_only": true,
-                          "label": "Assistive devices",
-                          "child": {
-                            "type": "nested object",
-                            "required": false,
-                            "read_only": true,
-                            "children": {
-                              "id": {
-                                "type": "integer",
-                                "required": false,
-                                "read_only": true,
-                                "label": "ID"
+                              "options": [
+                                  {
+                                      "id": 1,
+                                      "name": "ladyari"
+                                  },
+                                  {
+                                      "id": 2,
+                                      "name": "mrga 7amya"
+                                  },
+                                  {
+                                      "id": 3,
+                                      "name": "hardcoded diareahha"
+                                  }
+                              ]
+                          },
+                          "aggression": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Aggression"
+                          },
+                          "hearing": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Hearing",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  }
+                              ]
+                          },
+                          "vision": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Vision",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  }
+                              ]
+                          },
+                          "speech": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Speech",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  }
+                              ]
+                          },
+                          "standing": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Standing",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  },
+                                  {
+                                      "value": "unable",
+                                      "display_name": "Unable to stand alone, needs help"
+                                  }
+                              ]
+                          },
+                          "walking": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Walking",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  },
+                                  {
+                                      "value": "unable",
+                                      "display_name": "Unable to walk"
+                                  }
+                              ]
+                          },
+                          "night_duty": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Night Duty"
+                          },
+                          "assistive_devices": {
+                              "type": "field",
+                              "required": false,
+                              "read_only": true,
+                              "label": "Assistive devices",
+                              "child": {
+                                  "type": "nested object",
+                                  "required": false,
+                                  "read_only": true,
+                                  "children": {
+                                      "id": {
+                                          "type": "integer",
+                                          "required": false,
+                                          "read_only": true,
+                                          "label": "ID"
+                                      },
+                                      "name": {
+                                          "type": "string",
+                                          "required": true,
+                                          "read_only": false,
+                                          "label": "Name",
+                                          "max_length": 100
+                                      }
+                                  }
                               },
-                              "name": {
-                                "type": "string",
-                                "required": true,
-                                "read_only": false,
-                                "label": "Name",
-                                "max_length": 100
-                              }
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "personal_hygiene": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Personal Hygiene",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            },
-                            {
-                              "value": "unable",
-                              "display_name": "Unable to perform"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "eating": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Eating",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            },
-                            {
-                              "value": "unable",
-                              "display_name": "Unable to eat"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "drinking": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Drinking",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            },
-                            {
-                              "value": "unable",
-                              "display_name": "Unable to drink"
-                            },
-                            {
-                              "value": "peg-tube",
-                              "display_name": "PEG tube"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "urinary_incontinence": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Urinary Incontinence"
-                        }
-                      },
-                      {
-                        "fecal_incontinence": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Fecal Incontinence"
-                        }
-                      },
-                      {
-                        "assistive_devices2": {
-                          "type": "field",
-                          "required": false,
-                          "read_only": true,
-                          "label": "Assistive devices2",
-                          "child": {
-                            "type": "nested object",
-                            "required": false,
-                            "read_only": true,
-                            "children": {
-                              "id": {
-                                "type": "integer",
-                                "required": false,
-                                "read_only": true,
-                                "label": "ID"
+                              "options": [
+                                  {
+                                      "id": 1,
+                                      "name": "aaaaaaaaa"
+                                  },
+                                  {
+                                      "id": 2,
+                                      "name": "bbbbbbbbbbbbbbbbbbbbbbbbbdevice"
+                                  },
+                                  {
+                                      "id": 3,
+                                      "name": "aaaaaaaaaaddd deviece"
+                                  }
+                              ]
+                          },
+                          "personal_hygiene": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Personal Hygiene",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  },
+                                  {
+                                      "value": "unable",
+                                      "display_name": "Unable to perform"
+                                  }
+                              ]
+                          },
+                          "eating": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Eating",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  },
+                                  {
+                                      "value": "unable",
+                                      "display_name": "Unable to eat"
+                                  }
+                              ]
+                          },
+                          "drinking": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Drinking",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  },
+                                  {
+                                      "value": "unable",
+                                      "display_name": "Unable to drink"
+                                  },
+                                  {
+                                      "value": "peg-tube",
+                                      "display_name": "PEG tube"
+                                  }
+                              ]
+                          },
+                          "urinary_incontinence": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Urinary Incontinence"
+                          },
+                          "fecal_incontinence": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Fecal Incontinence"
+                          },
+                          "assistive_devices2": {
+                              "type": "field",
+                              "required": false,
+                              "read_only": true,
+                              "label": "Assistive devices2",
+                              "child": {
+                                  "type": "nested object",
+                                  "required": false,
+                                  "read_only": true,
+                                  "children": {
+                                      "id": {
+                                          "type": "integer",
+                                          "required": false,
+                                          "read_only": true,
+                                          "label": "ID"
+                                      },
+                                      "name": {
+                                          "type": "string",
+                                          "required": true,
+                                          "read_only": false,
+                                          "label": "Name",
+                                          "max_length": 100
+                                      }
+                                  }
                               },
-                              "name": {
-                                "type": "string",
-                                "required": true,
-                                "read_only": false,
-                                "label": "Name",
-                                "max_length": 100
-                              }
-                            }
+                              "options": [
+                                  {
+                                      "id": 1,
+                                      "name": "ass2 away device"
+                                  },
+                                  {
+                                      "id": 2,
+                                      "name": "kljhgkljh"
+                                  },
+                                  {
+                                      "id": 3,
+                                      "name": "jklf;as dj;lfk"
+                                  }
+                              ]
+                          },
+                          "special_activities": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Special Activities",
+                              "choices": [
+                                  {
+                                      "value": "mobilizing",
+                                      "display_name": "Mobilizing"
+                                  },
+                                  {
+                                      "value": "antithrombotic-injections",
+                                      "display_name": "Subcutaneous injections (antithrombotic)"
+                                  },
+                                  {
+                                      "value": "insulin-injections",
+                                      "display_name": "Subcutaneous injections (insulin)"
+                                  },
+                                  {
+                                      "value": "transfer",
+                                      "display_name": "Transfer from bed to wheelchair"
+                                  }
+                              ]
+                          },
+                          "patient_note": {
+                              "type": "string",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Patient Note"
                           }
-                        }
                       },
-                      {
-                        "special_activities": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Special Activities",
-                          "choices": [{
-                              "value": "mobilizing",
-                              "display_name": "Mobilizing"
-                            },
-                            {
-                              "value": "antithrombotic-injections",
-                              "display_name": "Subcutaneous injections (antithrombotic)"
-                            },
-                            {
-                              "value": "insulin-injections",
-                              "display_name": "Subcutaneous injections (insulin)"
-                            },
-                            {
-                              "value": "transfer",
-                              "display_name": "Transfer from bed to wheelchair"
-                            }
-                          ]
-                        }
+                      "Environment": {
+                          "environment": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Environment and Accommodation",
+                              "choices": [
+                                  {
+                                      "value": "house",
+                                      "display_name": "House"
+                                  },
+                                  {
+                                      "value": "apartment",
+                                      "display_name": "Apartment"
+                                  }
+                              ]
+                          },
+                          "elevator": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Elevator"
+                          },
+                          "size": {
+                              "type": "integer",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Size in m2",
+                              "min_value": -2147483648,
+                              "max_value": 2147483647
+                          },
+                          "location": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Location",
+                              "choices": [
+                                  {
+                                      "value": "city",
+                                      "display_name": "City"
+                                  },
+                                  {
+                                      "value": "country",
+                                      "display_name": "Country"
+                                  },
+                                  {
+                                      "value": "suburb",
+                                      "display_name": "Suburb"
+                                  }
+                              ]
+                          },
+                          "bathroom": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Bathroom",
+                              "choices": [
+                                  {
+                                      "value": "private_bathroom",
+                                      "display_name": "Private Bathroom/Toilet"
+                                  },
+                                  {
+                                      "value": "private_bathroom_shared_toilet",
+                                      "display_name": "Private Bathroom, Shared Toilet"
+                                  },
+                                  {
+                                      "value": "shared_bathroom_toilet",
+                                      "display_name": "Shared Bathroom and Toilet"
+                                  }
+                              ]
+                          },
+                          "bedroom": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Bedroom",
+                              "choices": [
+                                  {
+                                      "value": "private_bedroom",
+                                      "display_name": "Private Bedroom"
+                                  },
+                                  {
+                                      "value": "couch",
+                                      "display_name": "Couch"
+                                  }
+                              ]
+                          },
+                          "television": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Television"
+                          },
+                          "wifi_internet": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "WiFi/Internet"
+                          },
+                          "pets": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Pets"
+                          },
+                          "additional_family_members": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Additional Family Members"
+                          },
+                          "additional_person_household": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Additional Person (Household Management)"
+                          },
+                          "additional_person_care": {
+                              "type": "boolean",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Additional Person (Household Management and Care)"
+                          }
+                      },
+                      "Caregiver Requirements": {
+                          "caregiver_requirements": {
+                              "type": "string",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Requirements for Caregiver from Patient's Side"
+                          },
+                          "driver_license": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Driver's License",
+                              "choices": [
+                                  {
+                                      "value": "yes",
+                                      "display_name": "Yes"
+                                  },
+                                  {
+                                      "value": "no",
+                                      "display_name": "No"
+                                  },
+                                  {
+                                      "value": "doesnt_matter",
+                                      "display_name": "Doesn't Matter"
+                                  }
+                              ]
+                          },
+                          "gender": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Gender",
+                              "choices": [
+                                  {
+                                      "value": "male",
+                                      "display_name": "Male"
+                                  },
+                                  {
+                                      "value": "female",
+                                      "display_name": "Female"
+                                  },
+                                  {
+                                      "value": "doesnt_matter",
+                                      "display_name": "Doesn't Matter"
+                                  }
+                              ]
+                          },
+                          "qualification": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Qualification",
+                              "choices": [
+                                  {
+                                      "value": "good",
+                                      "display_name": "Good"
+                                  },
+                                  {
+                                      "value": "fair",
+                                      "display_name": "Fair"
+                                  },
+                                  {
+                                      "value": "poor",
+                                      "display_name": "Poor"
+                                  }
+                              ]
+                          },
+                          "smoker": {
+                              "type": "choice",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Smoker",
+                              "choices": [
+                                  {
+                                      "value": "yes",
+                                      "display_name": "Yes"
+                                  },
+                                  {
+                                      "value": "no",
+                                      "display_name": "No"
+                                  },
+                                  {
+                                      "value": "doesnt_matter",
+                                      "display_name": "Doesn't Matter"
+                                  }
+                              ]
+                          },
+                          "age_of_caregiver_min": {
+                              "type": "integer",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Minimum age of Caregiver",
+                              "min_value": -2147483648,
+                              "max_value": 2147483647
+                          },
+                          "age_of_caregiver_max": {
+                              "type": "integer",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Maximum Age of Caregiver",
+                              "min_value": -2147483648,
+                              "max_value": 2147483647
+                          },
+                          "activities": {
+                              "type": "string",
+                              "required": false,
+                              "read_only": false,
+                              "label": "Activities"
+                          }
                       }
-                    ],
-                    "Environment": [{
-                        "environment": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Environment and Accommodation",
-                          "choices": [{
-                              "value": "house",
-                              "display_name": "House"
-                            },
-                            {
-                              "value": "apartment",
-                              "display_name": "Apartment"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "elevator": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Elevator"
-                        }
-                      },
-                      {
-                        "size": {
-                          "type": "integer",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Size in m2",
-                          "min_value": -2147483648,
-                          "max_value": 2147483647
-                        }
-                      },
-                      {
-                        "location": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Location",
-                          "choices": [{
-                              "value": "city",
-                              "display_name": "City"
-                            },
-                            {
-                              "value": "country",
-                              "display_name": "Country"
-                            },
-                            {
-                              "value": "suburb",
-                              "display_name": "Suburb"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "bathroom": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Bathroom",
-                          "choices": [{
-                              "value": "private_bathroom",
-                              "display_name": "Private Bathroom/Toilet"
-                            },
-                            {
-                              "value": "private_bathroom_shared_toilet",
-                              "display_name": "Private Bathroom, Shared Toilet"
-                            },
-                            {
-                              "value": "shared_bathroom_toilet",
-                              "display_name": "Shared Bathroom and Toilet"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "bedroom": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Bedroom",
-                          "choices": [{
-                              "value": "private_bedroom",
-                              "display_name": "Private Bedroom"
-                            },
-                            {
-                              "value": "couch",
-                              "display_name": "Couch"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "television": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Television"
-                        }
-                      },
-                      {
-                        "wifi_internet": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "WiFi/Internet"
-                        }
-                      },
-                      {
-                        "pets": {
-                          "type": "boolean",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Pets"
-                        }
-                      }
-                    ],
-                    "Caregiver Requirements": [{
-                        "caregiver_requirements": {
-                          "type": "string",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Requirements for Caregiver from Patient's Side"
-                        }
-                      },
-                      {
-                        "driver_license": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Driver's License",
-                          "choices": [{
-                              "value": "yes",
-                              "display_name": "Yes"
-                            },
-                            {
-                              "value": "no",
-                              "display_name": "No"
-                            },
-                            {
-                              "value": "doesnt_matter",
-                              "display_name": "Doesn't Matter"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "gender": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Gender",
-                          "choices": [{
-                              "value": "male",
-                              "display_name": "Male"
-                            },
-                            {
-                              "value": "female",
-                              "display_name": "Female"
-                            },
-                            {
-                              "value": "doesnt_matter",
-                              "display_name": "Doesn't Matter"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "qualification": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Qualification",
-                          "choices": [{
-                              "value": "good",
-                              "display_name": "Good"
-                            },
-                            {
-                              "value": "fair",
-                              "display_name": "Fair"
-                            },
-                            {
-                              "value": "poor",
-                              "display_name": "Poor"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "smoker": {
-                          "type": "choice",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Smoker",
-                          "choices": [{
-                              "value": "yes",
-                              "display_name": "Yes"
-                            },
-                            {
-                              "value": "no",
-                              "display_name": "No"
-                            },
-                            {
-                              "value": "doesnt_matter",
-                              "display_name": "Doesn't Matter"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "age_of_caregiver_min": {
-                          "type": "integer",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Minimum age of Caregiver",
-                          "min_value": -2147483648,
-                          "max_value": 2147483647
-                        }
-                      },
-                      {
-                        "age_of_caregiver_max": {
-                          "type": "integer",
-                          "required": false,
-                          "read_only": false,
-                          "label": "Maximum Age of Caregiver",
-                          "min_value": -2147483648,
-                          "max_value": 2147483647
-                        }
-                      }
-                    ]
                   }
-                }
+              }
               
                   // for (const prop in data) {
                   //   if (data[prop][0] && data[prop][0].id) {

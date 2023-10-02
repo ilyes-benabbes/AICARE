@@ -1,8 +1,10 @@
 @use "./abstracts/variables" as * ; 
 
 .page {
+    flex : 1 ;
+    background-color: white;
     padding-right: 10vw;
-    padding-left: 10vw;
+    // padding-left: 10vw;
     height: 500px;
     min-height: 90vh ;
     max-height: 85vh ;
@@ -16,14 +18,15 @@
 
 .messagesPanel{
    
+    max-height: 87vh ;
 
 
-
+flex : 2;
     
     
 
-    // border: solid 2px black;
-    // flex: 1 ;
+    border-right: solid 1px rgb(185, 177, 177);
+    // width: ;
 img {
     align-self: stretch !important;
     // background-color: transparent;
@@ -32,7 +35,7 @@ img {
 .mymessages{ 
     
     
-    max-height: $maxh ;
+    max-height: $maxh  ;
     width: auto;
 
     // background-color: cyan;
@@ -79,6 +82,11 @@ img {
     padding: 2px 3% 2px 3%;
 
 .profile {
+
+
+    img {
+        border: $primary solid 2px;
+    }
     max-height: 72px;
     border-bottom: solid 1.2px rgba($color: #000000, $alpha: 0.08);
 
@@ -100,7 +108,7 @@ align-self: stretch;
 }
 
 .profile:hover{
-    background-color: lightblue;
+    background-color: rgb(228, 176, 224);
 }
 
 

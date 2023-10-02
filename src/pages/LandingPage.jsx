@@ -13,14 +13,14 @@ const LandingPage = () => {
 /**
  * ! what to fix more ? 
  * ! fix the links and make each button , take you to the next page 
- * ! fix the nuances of the style that's left 
+ * ! fix the nuances of the style that's leftp 
  * ! that's it i think for now .
  * ! go directly to the sign up page  
  */
 
   return (
     <div className="landing col">
-      <Navbar />
+      <Navbar  isLogged/>
       <Head > </Head>
       <Background></Background>
       <Whysection></Whysection>

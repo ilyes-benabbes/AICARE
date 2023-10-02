@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export const SharedDataContext = createContext();
+// const navigate = useNavigate()
 
 export const useSharedData = () => {
   const context = useContext(SharedDataContext);
@@ -39,7 +41,7 @@ const FillConvos = () => {
     fetchData(Convosapi, "get").then(data => {
         if (data) {
             setconvos(data);
-            console.log('data', data)
+            console.log('convos', data)
         }
     });
 
@@ -70,6 +72,10 @@ const fetchData = async (url , method) => {
  
 }
 
+export const useHandleProfile = (profile) => {
+  // const navigate = useNavigate()
+  navigate("/profilepage", { state: profile });
+}
 
 
 
