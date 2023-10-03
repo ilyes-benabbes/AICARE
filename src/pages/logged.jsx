@@ -9,7 +9,6 @@ import ClientsDeck from "../components/ClientsDeck";
 import { useLocation, useNavigate } from "react-router-dom";
 import Clients from "./clientsbox";
 import "./log.css";
-import { Profile_chat_context } from "./contexts/context";
 import { useSharedData } from "../context/context";
 import LoggedNavbar from "../components/LoggedNavbar";
 import Linkitem from "../components/sub/Linkitem";
@@ -42,37 +41,11 @@ function Loggedin() {
   //* if user.common_info == seller or vice_verca.
   const [isLoading, setIsLoading] = useState(true);
   const { allAccounts, FillAccounts, Convos, FillConvos } = useSharedData();
-  
-  //! new desing
-  const cardsref = useRef();
-  const [ showRightArrow , setShowRightArrow] = useState(false) 
-  const [ showLeftArrow , setShowLeftArrow] = useState(false) 
-  const user = useUser();
-
-  /**
-   * !hooks
-   */
-
-  
-
-  /**
-   * !function
-   */
-
-
-
-
-//! POP UP BUTTONS : 
-const CustomButton = React.forwardRef(({ open, ...props }, ref) => (
-  <button className="button" ref={ref} {...props}>
-    Trigger - {props.open ? 'Opened' : 'Closed'}
-  </button>
-));
-
-
+  const [user] = useUser();
+  const role = user.basic_info.role
 
   return (
-    <Layout isCaregiver={true} pageName={"Dashboard"}>
+    <Layout isCaregiver={role == "seller"} pageName={"Dashboard"}>
       <div className="dashboardPage g1 col">
 
        <ClientsDeck></ClientsDeck>

@@ -5,15 +5,18 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { useSharedData } from "../context/context";
 
+
 function ClientsDeck() {
+  const { fillContracts, fillConvos, contracts, convos , getRole } = useSharedData();
   const cardsref = useRef();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const role = getRole()
 
-  const { fillContracts, fillConvos, contracts, convos } = useSharedData();
 
-  // *************** finished loading : */
+
+// ********* finished loading : */
   useEffect(() => {
     if (contracts.length > 0 && convos.length > 0) {
       setIsLoading(false);

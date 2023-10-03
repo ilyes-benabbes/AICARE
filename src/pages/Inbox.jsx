@@ -4,8 +4,7 @@ import styles2 from "./mycss.module.css"
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Button } from 'react-bootstrap';
 import Rating from '@mui/material/Rating';
-import { useContext ,  } from 'react';
-import { Profile_chat_context } from './contexts/context'
+
 import { useNavigate } from 'react-router-dom';
 
 import "./inbox.css"
@@ -17,7 +16,6 @@ function Inbox() {
   // const context = useContext(Profile_chat_context) ;
   const { allAccounts,  Convos } = useSharedData()
   //! if it is out of the fucking context , which data do i fucking need z3ma ( profileId , chatId so i can render the fucking thing)
-  //! 
   // console.log('invox Context', context)
   const convos = Convos
 

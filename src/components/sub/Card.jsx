@@ -6,9 +6,10 @@ import Typography from '@mui/material/Typography';
 import { useSharedData } from '../../context/context';
 
 
-function Card({ contract , isCareGiver }) {
+function Card({ contract }) {
   const [navigateToProfile , navigateToChat] = useCustomNavigate() ;
-  const {convos} = useSharedData()
+  const {convos , getRole} = useSharedData()
+  const role = getRole() ;
 
   function handleContract(e , id){
     e.preventDefault()
@@ -17,9 +18,9 @@ function Card({ contract , isCareGiver }) {
   
   function handleChat(e , id){
     e.preventDefault()
-    console.log('convos', convos)
-    const foundConvo = convos.find((convo) => convo.theseller == "55");
-    navigateToChat(foundConvo.id)
+    // console.log('convos', convos)
+    // const foundConvo = convos.find((convo) => convo.theseller == "55");
+    navigateToChat(id)
     
   }
   const style = {
@@ -46,15 +47,15 @@ function Card({ contract , isCareGiver }) {
               {/* <img src={imgUrl} alt="girl" /> */}
             </div>
             <p className="cardFont cursor"
-            onClick={e => navigateToProfile(contract.user.id)}
-            >{contract.user.id}</p>
+            onClick={e => navigateToProfile(contract.partner.id)}
+            >{contract.partner.id}</p>
             <button className="secondarybtn g1"
             onClick={e => handleContract( e, contract.id)}>
               <p>{"check contract"}</p>
               <img src="checkcontract.svg" alt="linkk"></img>
             </button>
             <button className="primarybtn g1"
-            onClick={  e=> handleChat(e , contract.user.id)}
+            onClick={  e=> handleChat(e , contract.conversation_id)}
             >
               <p>{"open chat"}</p>
               <img src="rightarrow.svg" alt="linkk"></img>

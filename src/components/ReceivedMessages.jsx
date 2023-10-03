@@ -5,26 +5,24 @@ import { useCustomNavigate } from '../pages/reducers/common';
 
 function ReceivedMessages() {
   const [navigateToProfile , navigateToChat] = useCustomNavigate() ;
-
   const {convos } = useSharedData()
-console.log('convos', convos)
+
   const ChatBox = ({convo})=>{
     function handleProfile(e  , id){
       e.stopPropagation()
       navigateToProfile(id)
-      
     }
     function handleChat(e , chatId){
-
+navigateToChat(chatId)
     }
     return (
       <div className="profile drow  "
       >
       <img src="face.png" alt="profile.png" />
           <div className="col full"
-          onClick={e=> navigateToChat( convo.id)}>
+          onClick={e=> handleChat(e ,  convo.id)}>
       <div className="name  drow-between">
-        <p className="head pname" onClick={  e=> handleProfile(e , convo.id)}
+        <p className="head pname" onClick={  e=> handleProfile(e , )}
         > {"profile.email"}</p>
         <p className="minibold-sub myplaceholder">{"about one minute"}</p>
         

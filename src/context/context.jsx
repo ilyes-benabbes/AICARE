@@ -30,7 +30,6 @@ const fillContracts = () => {
     fetchData(contractsApi, "get").then(data => {
         if (data) {
             setContracts(data);
-            console.log('contracts', data)
              
         }
     });
@@ -42,13 +41,15 @@ const fillConvos = () => {
     fetchData(convosApi, "get").then(data => {
         if (data) {
             setConvos(data);
-            console.log('convos', data)
         }
     });
 
+  } 
+const getRole = () => {
+  const user = JSON.parse(localStorage.getItem("thisuser")) ;
+  return user.basic_info.role
+}
 
-
-} 
       
 const fetchData = async (url , method) => {
     try {
@@ -66,7 +67,7 @@ const fetchData = async (url , method) => {
   };
   
   return (
-    <SharedDataContext.Provider value={{ contracts, setContracts , fillContracts,   convos , setConvos , fillConvos}}>
+    <SharedDataContext.Provider value={{ contracts, setContracts , fillContracts, getRole ,  convos , setConvos , fillConvos}}>
       {children}
     </SharedDataContext.Provider>
   );
@@ -74,7 +75,6 @@ const fetchData = async (url , method) => {
 }
 
 export const useHandleProfile = (profile) => {
-  // const navigate = useNavigate()
   navigate("/profilepage", { state: profile });
 }
 
