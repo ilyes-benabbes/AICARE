@@ -40,18 +40,15 @@ function App() {
     <SharedDataContextProvider>
       <Routes>
         <Route path="/land" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/log" element={<LoginPage />} />
         <Route path="/sign" element={<SignUpPage />} />
         <Route path="/landing-page" element={<LandingPage />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/h" element={<LoggedInCaregiverIfProfile />} />
         <Route path="/my-form" element={<MyForm />} />
         <Route path="/card" element={<Profile />} />
         <Route path="/mypatients" element={<Mypatients />} />
         <Route path="/inbox" element={<Inbox />} />
-        <Route path="/cert" element={<Cert />} />
         <Route path="/Dashboard" element={<Loggedin />} />
-        <Route path="/logTaker" element={<LoggedinCareTaker />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/Messages" element={<Mychat />} />

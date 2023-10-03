@@ -50,10 +50,3 @@ function handleGetState(user){
           </div>;
 }
   
-
-    {/* { <button className="btnprimary"
-            onClick={handlealertState}
-            > dispatch alert</button> */}
-            {/* <button className="btnprimary"
-            onClick={ e => navigateToProfile(convo.theclient)}
-            > dispatch naviagta</button>  */}

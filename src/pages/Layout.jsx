@@ -2,14 +2,17 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import LoggedNavbar from '../components/LoggedNavbar';
+import ProfileCardSideBar from '../components/ProfileCardSideBar';
 
 
-function Layout({ children , isCaregiver , pageName}) {
+function Layout({ children , pageName , checkingProfile , profile}) {
   return (
 <div className='mylayout '>
-     <LoggedNavbar isCaregiver = {isCaregiver}></LoggedNavbar>
+     <LoggedNavbar ></LoggedNavbar>
      <div className="drow layoutContainer">
-     <Sidebar initialSelected ={pageName}/>
+    { !checkingProfile ? <Sidebar initialSelected ={pageName}
+    checkingProfile = {checkingProfile}
+    /> : <ProfileCardSideBar profile={profile}></ProfileCardSideBar>}
      <div className='myRightSide '>
       {children} 
       

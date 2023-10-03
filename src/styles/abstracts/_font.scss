@@ -71,7 +71,7 @@ font-size: 4.407rem;
   font-family: $o;
 }
 .sectionfontthin{
-  @include font(30px , black , $wnormal) ;
+  @include font(16px , black , 500) ;
   font-family: $o;
 }
 

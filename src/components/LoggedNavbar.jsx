@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { Mylogo } from './sub/mylogo'
-function LoggedNavbar({isCaregiver}) {
+import { useUser } from '../pages/reducers/common'
+
+function LoggedNavbar({}) {
+    const [user ] = useUser() ;
+    const role = user.basic_info.role ;
     const [isToggeled , setistoggeled] = useState(false)
     function showMenu(){
         setistoggeled(!isToggeled)
@@ -9,7 +13,7 @@ function LoggedNavbar({isCaregiver}) {
     <div className='drow-between pad loggedNavbar border '> 
         <Mylogo></Mylogo>
         <div className=" drow g2 ">
-            { isCaregiver ? <button className='primarybtn-nopad '>{"add id document"}</button> :
+            { role == "seller" ? <button className='primarybtn-nopad '>{"add id document"}</button> :
             <button className='primarybtn'>{"search CareGivers"}</button>}
             <img src='bell.svg' className='navicon cursor'></img>
             <img src='arrow.svg'  className='navicon cursor'

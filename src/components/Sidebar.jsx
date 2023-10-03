@@ -4,9 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-function Sidebar( {initialSelected}) {
+function Sidebar( {initialSelected  , checkingProfile}) {
   const navigate = useNavigate()
-  console.log('initialSelected', initialSelected)
     const [ selected  ,setselected] = useState(initialSelected)
 
 function handleselected(e){
@@ -24,7 +23,9 @@ function handleselected(e){
         {text : "Contracts" , imgsrc : "contracts" , navigationLink :"Contracts"},
         {text : "Skills & Certificats" , imgsrc : "skills" , navigationLink :"Skills"}
       ]
+      if (!checkingProfile ){
   return (
+
     <div className="sidebar col g1 ">
     <div className="personaldetails col ">
       <div className="imgcontainer centerself">
@@ -42,7 +43,9 @@ function handleselected(e){
 
 return(
 <Linkitem element={element}  imgsrc={element.imgsrc} handleselected={handleselected}
-isselected={ selected === element.text   ? true : false} ></Linkitem>
+isselected={ selected === element.text   ? true : false} 
+key={index}
+></Linkitem>
 )
 })}
 
@@ -53,7 +56,8 @@ isselected={ selected === element.text   ? true : false} ></Linkitem>
 
 
     </div>
-  )
+  ) } 
+
 }
 
 export default Sidebar

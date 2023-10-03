@@ -20,7 +20,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing col">
-      <Navbar  isLogged/>
+      <Navbar  />
       <Head > </Head>
       <Background></Background>
       <Whysection></Whysection>

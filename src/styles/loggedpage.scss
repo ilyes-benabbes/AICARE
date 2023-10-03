@@ -138,10 +138,10 @@
         -webkit-transform: translate(0%, 0%) rotate(310deg);
         -moz-transform: translate(0%, 0%) rotate(310deg);
         transform: translate(0%, 0%) rotate(310deg);
-        -webkit-animation: fade_move_down 4s ease-in-out infinite;
-        -moz-animation:    fade_move_down 3s ease-in-out infinite;
-        animation:         fade_move_down 4s ease-in-out infinite;
-        background-color: rgb(197, 195, 191);
+        // -webkit-animation: fade_move_down 4s ease-in-out infinite;
+        // -moz-animation:    fade_move_down 3s ease-in-out infinite;
+        // animation:         fade_move_down 4s ease-in-out infinite;
+        background-color: rgba(192, 189, 182, 0.363);
         overflow: hidden;
     }
 
@@ -166,10 +166,12 @@
     -webkit-transform: translate(0%, 0%) rotate(310deg);
     -moz-transform: translate(0%, 0%) rotate(310deg);
     transform: translate(0%, 0%) rotate(310deg);
-    -webkit-animation: fade_move_down 4s ease-in-out infinite;
-    -moz-animation:    fade_move_down 3s ease-in-out infinite;
-    animation:         fade_move_down 4s ease-in-out infinite;
-    background-color: rgb(197, 195, 191);
+    // -webkit-animation: fade_move_down 4s ease-in-out infinite;
+    // -moz-animation:    fade_move_down 3s ease-in-out infinite;
+    // animation:         fade_move_down 4s ease-in-out infinite;
+    background-color: rgba(208, 26, 26, 0.86);
+    background-color: rgba(192, 189, 182, 0.363);
+    
     overflow: hidden; 
 
     .leftArrow{
@@ -215,7 +217,7 @@
 
 
     .clients{
-
+            min-height: 50vh  !important;
 .profile {
     border-bottom: solid 1.5px lightgray;
 }

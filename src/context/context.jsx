@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { contractsApi , convosApi } from '../pages/reducers/common';
 export const SharedDataContext = createContext();
 // const navigate = useNavigate()
 
@@ -15,32 +15,33 @@ export const useSharedData = () => {
 
 
 export const SharedDataContextProvider = ({ children }) => {
+  // const [ contractsApi , convosApi] =
     //! apis
-const Patientsapi = "/api/profile/MyPatientsView/" ;
-const Convosapi = "/api/messages/conversations/" ;
+// const contractsApi = "/api/profile/MyPatientsView/" ;
+// const convosApi = "/api/messages/conversations/" ;
 //!variables
-const [allAccounts, setAllAccounts] = useState([]);
-const [ Convos , setconvos] = useState([]);
+const [contracts, setContracts] = useState([]);
+const [ convos , setConvos] = useState([]);
 
 
 
 
-const FillAccounts = () => {
-    fetchData(Patientsapi, "get").then(data => {
+const fillContracts = () => {
+    fetchData(contractsApi, "get").then(data => {
         if (data) {
-            setAllAccounts(data);
-            console.log('datalog', data)
-            return data
+            setContracts(data);
+            console.log('contracts', data)
+             
         }
     });
 
 
 
 } 
-const FillConvos = () => {
-    fetchData(Convosapi, "get").then(data => {
+const fillConvos = () => {
+    fetchData(convosApi, "get").then(data => {
         if (data) {
-            setconvos(data);
+            setConvos(data);
             console.log('convos', data)
         }
     });
@@ -65,7 +66,7 @@ const fetchData = async (url , method) => {
   };
   
   return (
-    <SharedDataContext.Provider value={{ allAccounts, setAllAccounts , FillAccounts , Convos , setconvos , FillConvos}}>
+    <SharedDataContext.Provider value={{ contracts, setContracts , fillContracts,   convos , setConvos , fillConvos}}>
       {children}
     </SharedDataContext.Provider>
   );

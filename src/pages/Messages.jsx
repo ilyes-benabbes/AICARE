@@ -10,6 +10,8 @@ import axios from "axios";
 import Inbox from "./Inbox";
 import { useSharedData } from "../context/context";
 import Layout from "./Layout";
+import { useUser } from "./reducers/common";
+
 
 function chat() {
 
@@ -17,12 +19,11 @@ function chat() {
    * ! variables :
    */
 
-
+  
   const location = useLocation();
   const convoId = location.state;
+  const [ user , authToken] = useUser()
   const [convoid, setconvoid] = useState(convoId);
-  // const convoId = "2365199a-f2c5-4609-a888-4da584ba15f9";
-  // console.log('thisconvo', thisconvo)
   const divRef = useRef(null);
   const inputref = useRef(null);
   const [convo, setConvo] = useState([]);
@@ -32,6 +33,8 @@ function chat() {
   const userToken = "617a47f4f3124215a0236565d4f63bece1739211"; // Replace with the actual user token
   let online = true;
   const url = `ws://localhost:8000/ws/messages/${convoid}/?token=${userToken}`;
+  const { convos } = useSharedData();
+
 
 
   const [ws , setws] = useState(new WebSocket(url))
@@ -39,7 +42,9 @@ function chat() {
   //! fix this later honey
   var lastmsg = 2;
 
-  const myid = 52; //! njibha from local storage easy tool . to put it in the send . the receiver he does its fucking job i don't really care
+  // const myid = user.basic_info.id; //! njibha from local storage easy tool . to put it in the send . the receiver he does its fucking job i don't really care
+  const myid = 55; //! njibha from local storage easy tool . to put it in the send . the receiver he does its fucking job i don't really care
+  // alert(myid)
 
 //! websoket : 
 //! websocket shit 
@@ -79,17 +84,15 @@ ws.onclose = () => {
 }, [convoid]);
 
 
-  //! contedxt
-  // const {allAccount , setAllAccount}   =useSharedData() ;
-  const { allAccounts, FillAccounts, Convos, FillConvos } = useSharedData();
 
   //! hooks :
 
   useEffect(() => {
-    fetchData("/api/messages/conversations/" + `${convoid}/`, "get").then(
+    fetchData("/api/messages/conversation/" + `${convoid}/`, "get").then(
       (data) => {
         if (data) {
           setConvo(data);
+          console.log('data', data)
         }
       }
     );
@@ -225,7 +228,7 @@ ws.onclose = () => {
       <div className="chat  col">
           <div className="menu drow-between ">
             <div className="drow leftmenu  ">
-              <img src="face.png" alt="sender" />
+              <img src="girl.jpg" alt="sender" />
               <div className="col ">
                 <p className="minibold">moreigno guar</p>
                 <div className="drow online g1">
@@ -298,11 +301,8 @@ ws.onclose = () => {
           </div> */}
 
           <div className="profiles col ">
-
-            <Profile></Profile>
-            <Profile></Profile>
-            <Profile></Profile>
-            {Convos.map((convo) => {
+ 
+            {convos.map((convo) => {
               return (
                 <Profile
                   convo={convo}
