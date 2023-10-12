@@ -40,6 +40,7 @@ const fillContracts = () => {
 const fillConvos = () => {
     fetchData(convosApi, "get").then(data => {
         if (data) {
+          console.log('data', data)
             setConvos(data);
         }
     });

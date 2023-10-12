@@ -1,0 +1,41 @@
+.hourpicker{
+  flex-wrap: wrap;
+  // border-right: solid red 5px ;
+.container {
+  display: flex;
+  flex-direction: column;
+  // width: 150px; /* Adjust the width as needed */
+  border: 1px solid lightgray;
+  background-color: white;
+  justify-content: center ;
+  align-items: center;
+  height: 80px;
+  /* border: solid red; */
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+}
+
+.container.selected {
+  background-color: #e6e7ff ;
+}
+
+
+
+.hour-row{
+  max-width: 100%;
+  flex-wrap: nowrap;
+  // border : solid red ;
+  flex-direction: row;
+  justify-content: center;
+  // align-items: stretch;
+  gap: 0;
+  /* justify-content: start; */
+  /* align-items: start; */
+}
+}
+
+.modalStep{
+  overflow-y: auto;
+  border : solid 6px blue ;
+}

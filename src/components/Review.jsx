@@ -1,25 +1,25 @@
 import React from "react";
-import ReactStars from "react-rating-stars-component" ;
-function Review({ review }) {
+import Rating from '@mui/material/Rating';
+function Review({ review , myName  }) {
 console.log('review.rating', review.rating)
   return (
-    <div className="col">
+    <div className="col review">
       <div className="drow">
         <img src={"girl.jpg"} alt="profile.png" />
         <div className="col">
-          <p>{"commentor.name : illyes"}</p>
-          <ReactStars>
-            count={5}
-            ishalf={true}
-            edit={false}
-            value={review.rating}
-            size={15}
-            activeColor="#ffd700"
-          </ReactStars>
+          <p>{review.from_user}</p>
+          <Rating
+        name="simple-controlled"
+        value={review.rating}
+        readOnly
+      />
         </div>
       </div>
-      <div className="drow">
-        <p>{review.content}</p>
+      <div className="col">
+        <p>{review.review}</p>
+        {review.replay && <div className="reply">
+          <p>{"reply from "+ myName}</p>
+          <p>{review.replay}</p></div>}
       </div>
     </div>
   );

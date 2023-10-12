@@ -13,30 +13,26 @@ import Review from "../components/Review";
 
 function Profilepage() {
   //! states and Vars
-  const [isloading, setisloading] = useState(true);
-  // const [ready, setready] = useState(false)
-  // const ready = true ;
   const location = useLocation();
-  // const profileId = location.state ;
-  const profileId = 2;
+  const profileId = location.state ;
   const genericProfile = {
-    name: "ilyes",
-    email: "ilyes@benabbes.com",
-    gender: "male",
-    address: "cite kasrou , Batna",
-    age: "105",
-    phone: "0790852279",
+    name: "generic",
+    email: "generic@generic.com",
+    gender: "generic",
+    address: "generic addres",
+    age: "generic Age",
+    phone: "generic phone number",
   };
   const [ready, setReady] = useState(false);
   const [profile, setProfile] = useState({});
   const [basicInfo, setInfo] = useState({});
+  const [reviews, setReviews] = useState([]);
 
   const Item = ({ smallkey, mainkey }) => {
     const element = profile[mainkey][smallkey];
-    console.log("mainke0kmsalprofiely", profile[mainkey][smallkey]);
     const GenericResponse = "not specefied";
 
-    if (element.type == "choice") {
+    if (element.type == "field") {
       return (
         <div className="col ">
           {element.value.length > 0 ? (
@@ -60,7 +56,15 @@ function Profilepage() {
       );
     } else if (element.type == "boolean") {
       return <div className="">{element.value ? <p>yes</p> : <p>no</p>}</div>;
-    } else {
+    } else if (element.type =="choice") {
+      return (
+        <>
+          <div className="col option">
+            <p>{element.value ? element.value : GenericResponse}</p>
+          </div>
+        </>)
+
+    }else {
       return (
         <div className="myinteger">
           {element.value ? <p>{element.value}</p> : <p>{GenericResponse}</p>}
@@ -70,12 +74,12 @@ function Profilepage() {
   };
 
   useEffect(() => {
-    console.log("sett");
     fetchData(PROFILE_BY_ID_API + profileId + "/", "get")
       .then((data) => {
         if (data) {
           setProfile(data.myself.all_categories);
           setInfo(data.myself.basic_info);
+          setReviews(data.myself.reviews)
           return data;
         }
       })
@@ -85,6 +89,7 @@ function Profilepage() {
   useEffect(() => {
     if (Object.keys(profile).length > 0) {
       setReady(true);
+      console.log('reviews', reviews)
     }
   }, [profile]);
 
@@ -95,7 +100,6 @@ function Profilepage() {
           <h1>{"Account Details"}</h1>
           {ready &&
             Object.keys(profile).map((mainkey) => {
-              console.log("mainkey", mainkey);
               return (
                 <Accordion >
                   <AccordionSummary
@@ -136,9 +140,15 @@ function Profilepage() {
             })}
         </div>
 
-        <div className=" col  reviews profileContainer">
+        <div className=" col g1 reviews profileContainer">
           <h1>{"Reviews :"}</h1>
-                <Review review = {{content :"you are a bad user , bacause you don't want to do this and that , you don't clean , you fuckng do nothing you r peaicje fj j;fkad fj;klasdd f;jklaf j;ask dfj;l " , rating :"4"}}></Review>
+          {reviews.map(review => {
+            return(
+              // <Review review = {{content :"you are a bad user  bacause you don't want to do this and that , you don't clean , you fuckng do nothing you r peaicje fj j;fkad fj;klasdd f;jklaf j;ask dfj;l " , rating :"4"}}></Review>
+              <Review review = {review } myName={basicInfo.email}></Review>
+
+            )
+          })}
 
         </div>
       </div>

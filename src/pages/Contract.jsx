@@ -61,7 +61,7 @@ function Contracts() {
           </div>
           <button className='secondarybtn'> show details</button>
           </div>
-          <ContractItem></ContractItem>
+          {/* <ContractItem></ContractItem> */}
   
           </div>
           </div>

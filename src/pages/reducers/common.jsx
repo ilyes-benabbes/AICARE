@@ -9,6 +9,7 @@ import axios from "axios"
  
  export  const PROFILE_BY_ID_API = "/api/profile/user_info/" ;
 
+ export const PostMsgApi = "/api/messages/conversation/" ;
 //! form
 export const  PROFILE_OPTIONS_API = "api/profile/ProfileAPIView/" ;  
 
@@ -48,7 +49,7 @@ export  const fetchData = async (url , method) => {
 export const useUser = ()=> {
   // console.log("second comond")
   const user = JSON.parse(localStorage.getItem("thisuser")) ;
-  console.log('user', user)
+  // console.log('user', user)
   const authToken = localStorage.getItem("authToken") ;
   // console.log('authToken', authToken)
   return [user , authToken]  ;

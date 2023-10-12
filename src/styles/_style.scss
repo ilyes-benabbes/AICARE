@@ -215,3 +215,13 @@ align-self: stretch;
 .profile:hover{
     background-color: rgb(228, 176, 224);
 }
+
+.review{
+ border: 1px lightgray solid;
+.reply{
+    padding-left: 10%;
+    border-bottom: $primary solid 2px;
+    border-top: $primary solid 2px;
+    margin-top: 5px;
+}
+}

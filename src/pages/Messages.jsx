@@ -10,19 +10,35 @@ import axios from "axios";
 import Inbox from "./Inbox";
 import { useSharedData } from "../context/context";
 import Layout from "./Layout";
-import { useUser } from "./reducers/common";
+import { useUser  , PostMsgApi} from "./reducers/common";
+import ReceivedMessages from "../components/ReceivedMessages";
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import ContractCreationPanel from "./ContractCreationPanel";
+
+
 
 
 function chat() {
-
-  /**
-   * ! variables :
-   */
-
-  
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90%',
+    height : "85%" ,
+    marginTop : "30px" ,
+    marginBottom : "30px" ,
+    bgcolor: 'background.paper',
+    border: '2px solid purple',
+    borderRadius : 5 ,
+    boxShadow: 24,
+    p: 4,
+  };
   const location = useLocation();
-  const convoId = location.state;
-  const [ user , authToken] = useUser()
+  let convoId  ;
+  const [user , authToken] = useUser();
   const [convoid, setconvoid] = useState(convoId);
   const divRef = useRef(null);
   const inputref = useRef(null);
@@ -33,18 +49,44 @@ function chat() {
   const userToken = "617a47f4f3124215a0236565d4f63bece1739211"; // Replace with the actual user token
   let online = true;
   const url = `ws://localhost:8000/ws/messages/${convoid}/?token=${userToken}`;
-  const { convos } = useSharedData();
-
-
-
-  const [ws , setws] = useState(new WebSocket(url))
-
-  //! fix this later honey
+  const postUrl = PostMsgApi + convoid +"/"
+  const { convos ,getRole} = useSharedData();
   var lastmsg = 2;
+  const [ chatterName , setChatterName] = useState("")
+  const [ chatterImg , setChatterImg] = useState("")
+  const myid = user.basic_info.id; 
+  const [ws , setws] = useState(new WebSocket(url))
+  const role = getRole()
+  const [ready , setReady] = useState(false)
+  const [panelShowed , setPanelShowed] = useState(false);
 
-  // const myid = user.basic_info.id; //! njibha from local storage easy tool . to put it in the send . the receiver he does its fucking job i don't really care
-  const myid = 55; //! njibha from local storage easy tool . to put it in the send . the receiver he does its fucking job i don't really care
-  // alert(myid)
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+
+  //********************/
+useEffect(() => {
+if (convos.length > 0 ) {
+  setReady(true);
+}
+}, [convos]); 
+
+useEffect(() => {
+  if (location.state)
+  { 
+    convoId =  location.state
+    setconvoid(convoId)
+  }
+  else if( ready && convos.length > 0) {
+    // alert("ready to get [0]")
+    convoId = convos[0].id
+    setconvoid(convoId)
+  } 
+
+}, [ready])
+
 
 //! websoket : 
 //! websocket shit 
@@ -83,16 +125,28 @@ ws.onclose = () => {
   };
 }, [convoid]);
 
-
+function findChatter(convoid){
+  console.log('convos', convos)
+    const foundConvo = convos.find((convo) => convo.id == convoid );
+    console.log('foundConvo', foundConvo)
+    setChatterName(foundConvo.other_person_name.name)
+    // console.log('chatterName', chatterName)
+    setChatterImg(foundConvo.other_person_name.profile_picture)
+    // console.log('chatterImg', chatterImg)
+  }
 
   //! hooks :
 
   useEffect(() => {
-    fetchData("/api/messages/conversation/" + `${convoid}/`, "get").then(
+    fetchData(postUrl, "get").then(
       (data) => {
         if (data) {
           setConvo(data);
           console.log('data', data)
+          console.log('convoid', convoid)
+          console.log("under findh chatt")
+          findChatter(convoid)
+
         }
       }
     );
@@ -113,16 +167,14 @@ ws.onclose = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       addmsg(e);
-
       e.preventDefault(); // Prevent the Enter key from adding a new line
       if (message.trim() !== "") {
-        setInputValue("");
+        setMessage("");
       }
     }
   };
 
   //************** */
-
   const fetchData = async (url, method) => {
     try {
       const response = await axios[method](url, {
@@ -139,47 +191,40 @@ ws.onclose = () => {
       return null;
     }
   };
-
   //************** */
-
   function addmsg(e) {
     inputref.current.value = "";
+    
     e.preventDefault();
-
     let msg = {
-      sender: myid,
-      receiver: 2,
       content: message,
-      conversation: convoId,
     };
+    setMessage("")
+    // postData(postUrl , msg) ;
 
-    // postData(`api/messages/messages/${convoId}/`, JSON.stringify(msg))
-    //   .then((res) => {
-    //     setConvo((prevConvo) => [...prevConvo, msg]);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     alert("error message could not be sent");
-    //   });
-
-    ws.send(JSON.stringify({
-      'type': 'message',
-      'message':message,
-      'receiver' : "2",
-      'sender' : "52"
-     }));
+    postData(postUrl, msg)
+    .then((res) => {
+      setConvo((prevConvo) => [...prevConvo, msg]);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("error message could not be sent");
+    });
+    setConvo()
+    // ws.send(JSON.stringify({
+    //   'type': 'message',
+    //   'message':message,
+    //   'receiver' : "2",
+    //   'sender' : "52"
+    //  }));
   
   }
-
   //************** */
-
   function handleChange(e) {
     const { name, value } = e.target;
     setMessage((prevData) => value);
   }
-
   //************** */
-
   const postData = async (url, json) => {
     try {
       const response = await axios.post(url, json, {
@@ -194,9 +239,7 @@ ws.onclose = () => {
       return null;
     }
   };
-
   //************** */
-
   function print() {
     // console.log("convo", convo);
     // console.log("message", message);
@@ -204,49 +247,80 @@ ws.onclose = () => {
     console.log("i am now filling the data over by a simple call");
     FillAccounts();
   }
-
   //************* */
-  function handleclick(newConvo) {
-    // setconvoid(newConvo);
+  function handleConvo(newConvo) {
+    setconvoid(newConvo);
+    // findChatter(newConvo)
+    
     console.log("button click");
     console.log('ws', ws)
-    // console.log()
     //!!!! last stop here , ce qui rest pour finir la prochiane vez es que tengo que fixar el websocket , y despues ich muste cambiar el designo and das is all
-    // navigate("/mychat", { state: "ab99c98e-8413-4684-a247-5a0331daa3ac" });
   }
-  function handleProfile(e, clientId) {
-    // const keyAttribute = e.currentTarget.getAttribute("user");
-    // alert("on profile too ??
-    console.log("Clicked on profileclient:", clientId);
-  }
+  
+  //************* */
+ function handleContractCreation(e){
+        setPanelShowed(true)
+        setOpen(true)
 
+ }
   return (
     <>
  <Layout isCaregiver={true} pageName={"Messages"}>
       <div className="drow page">
-    
+    {/* here begins he chat window */}
       <div className="chat  col">
           <div className="menu drow-between ">
-            <div className="drow leftmenu  ">
+            <div className="drow leftmenu">
               <img src="girl.jpg" alt="sender" />
-              <div className="col ">
-                <p className="minibold">moreigno guar</p>
+              <div className="col onlineBox">
+                <p className="minibold">{chatterName}</p>
                 <div className="drow online g1">
                   <img src="online.svg" className="smalli" alt="" />
-                  <p className="myplaceholder">online</p>
+                  <p className="myplaceholder">{"online"}</p>
                 </div>
               </div>
             </div>
 
-            <button className="callbtn drow g1">
+            { role == "seller" && <button className="callbtn drow g1">
               {/* <img src="call.svg" alt="call" className="i" /> */}
-              <p className="minibold">{"create contract"}</p>
-            </button>
+              <p className="minibold"
+              onClick={e=>handleContractCreation(e)}
+              >{"create contract"}</p>
+            </button>}
+
+
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography  component="h2" textAlign={"center"}
+          fontWeight={400}>
+            { "Please fill the form to create your contracts :"}
+          </Typography>
+          <Box id="modal-modal-description" sx={{ mt: 2  , border :"solid green" , height : "70vh"  , overflowY : "auto"}} classname= "modalStep">
+              <div className=' col g1'>
+                <ContractCreationPanel></ContractCreationPanel>
+                {/* <p className='sectionfontthin'>Price/hour</p> */}
+                {/* <p>{contract.price_per_hour}</p> */}
+                {/* <p className='sectionfontthin'>Total hours</p> */}
+                {/* <p>{contract.total_hour}</p> */}
+                {/* <p className='sectionfontthin'>Missed Hours</p> */}
+                {/* <p>{contract.missed_hour}</p> */}
+                
+              </div>
+          </Box>
+        </Box>
+      </Modal>
+
           </div>
 
           <div className="chatbox col g3 myscroll grow  ">
-            {convo.map((msg, index) => {
-              let isnew = lastmsg != msg.sender;
+            { ready && convo.map((msg, index) => {
+              let isnew = (lastmsg != msg.sender);
               lastmsg = msg.sender;
               return (
                 <Message
@@ -286,14 +360,14 @@ ws.onclose = () => {
             </div>
           </div>
         </div>
-
+{/* here end the left chat winodw */}
 
       
         <div className="col messagesPanel ">
           <div className="mymessages drow-center full g1 ">
             <p className="head"> Messages </p>
             <img src="darr.svg" alt="downArrow" className="i" />
-            <p className="head">12</p>
+            <p className="head">{convos.length}</p>
           </div>
 
           {/* <div className="search drow-center minibold">
@@ -302,7 +376,9 @@ ws.onclose = () => {
 
           <div className="profiles col ">
  
-            {convos.map((convo) => {
+            <ReceivedMessages changeConvo = {handleConvo}></ReceivedMessages>
+            {/* {convos.map((convo) => {
+
               return (
                 <Profile
                   convo={convo}
@@ -310,11 +386,7 @@ ws.onclose = () => {
                   handleProfile={handleProfile}
                 ></Profile>
               );
-            })}
-
-            {/* <button onClick={handleclick}>click me</button> */}
-            {/* <Profile onClick={handleclick}></Profile> */}
-            {/* one profile above  */}
+            })} */}
           </div>
         </div>
 

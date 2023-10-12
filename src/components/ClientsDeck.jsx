@@ -7,7 +7,7 @@ import { useSharedData } from "../context/context";
 
 
 function ClientsDeck() {
-  const { fillContracts, fillConvos, contracts, convos , getRole } = useSharedData();
+  const { fillContracts, fillConvos, contracts, getRole } = useSharedData();
   const cardsref = useRef();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
@@ -18,27 +18,25 @@ function ClientsDeck() {
 
 // ********* finished loading : */
   useEffect(() => {
-    if (contracts.length > 0 && convos.length > 0) {
+    if (contracts.length > 0 ) {
       setIsLoading(false);
     }
-  }, [contracts, convos]);
+  }, [contracts]);
 
   //********* fill convos */
-  useEffect(() => {
-    fillConvos();
-  }, []);
+  // useEffect(() => {
+  //   fillConvos();
+  // }, []);
 
   //********* fill accounts */
   useEffect(() => {
     fillContracts();
   }, []);
 
-  //********************/
 
+  //********************/
   function print(e) {
     e.preventDefault();
-    console.log("Convos :");
-    console.log(convos);
     console.log("contracts ", contracts);
   }
   function handleScroll(e) {

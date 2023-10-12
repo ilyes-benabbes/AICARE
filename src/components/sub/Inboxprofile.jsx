@@ -10,10 +10,6 @@ const [tasks, dispatch] = useReducer(
   convos_Reducer
 );
 
-// const [ user , setuser] = useState({})
-
-
-//!j 
 const { navigateToProfile } = useCustomNavigate();
 
   function handlealertState(newState){
@@ -21,7 +17,6 @@ const { navigateToProfile } = useCustomNavigate();
         type: 'alerted',
       });
 }
-
 
 function handleGetState(user){
     dispatch({
@@ -43,9 +38,7 @@ function handleGetState(user){
             
             <p className="minibold-sub myplaceholder">12m</p>
           </div>
-            <p className="myplaceholder minibold-sub ">{msg} </p>
-        
-          
+            <p className="myplaceholder minibold-sub ">{msg} </p>         
           </div>
           </div>;
 }
