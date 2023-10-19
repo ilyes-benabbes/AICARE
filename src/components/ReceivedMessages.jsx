@@ -65,8 +65,9 @@ useEffect(() => {
     <div className="clients col">
     {!changeConvo && <h1 className="containertitle">{"Received Messages : "}</h1>}
 
-{ready && convos.map(convo => {
-      return(<ChatBox convo={convo}  role={role}></ChatBox>)
+{ready && convos.map( (convo , index) => {
+      return(<ChatBox
+        key={index} convo={convo}  role={role}></ChatBox>)
     })}
     
   </div>

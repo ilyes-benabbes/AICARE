@@ -11,6 +11,7 @@ import DatePanel from "react-multi-date-picker/plugins/date_panel" ;
 import "react-multi-date-picker/styles/layouts/mobile.css"
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
+// import Button from "react-multi-date-picker/components/button"
 // import Box from '@mui/material/Box';
 // import Typography from '@mui/material/Typography';
 
@@ -33,7 +34,6 @@ const style = {
 export default function ContractCreationPanel() {
     const [preset , setPreset] = useState([])
   const [selectedHours, setSelectedHours] = useState(preset);
-//   const [values, setValues] = useState([]);
 let values  ;
 const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -87,11 +87,7 @@ let sameTime = false ;
     // setOpen(true)
   
   }
-    const validation [values]
-
-function noErrors(step) {
-
-}
+    
   const handleNext = () => {
     const newActiveStep =
       isLastStep() && !allStepsCompleted()
@@ -99,11 +95,9 @@ function noErrors(step) {
           // find the first step that has been completed
           steps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
-        if (noErrors ( activeStep))
+        // if (noErrors ( activeStep))
     setActiveStep(newActiveStep);
-  else {
-    alert("error") ;
-  }
+ 
 
 
   };
@@ -158,7 +152,9 @@ function noErrors(step) {
   const daysSelection = ()=>{
     return <div className='step col'> 
         <h1>Select the days please : </h1>
-        <DatePicker multiple
+        <DatePicker
+        //  multiple
+        range
         // className='purple'
         value={values}
         onChange={newvalues =>handleChange(newvalues)}
@@ -167,6 +163,14 @@ function noErrors(step) {
         plugins={[
             <DatePanel />
            ]}
+          //  render={<button className='primarybtn'> click me please to select the days </button>}
+           render={(value, openCalendar) => {
+            return (
+              <button className='secondarybtn' onClick={openCalendar}>
+                {value ? value : "click to select days please"}
+              </button>
+            )
+          }}
           
         ></DatePicker>
         <div >
@@ -175,7 +179,7 @@ function noErrors(step) {
     </div>
   }
   const step3 = ()=>{
-    return <h1>sending nudes after that too</h1>
+    return <h1>sending money after that too</h1>
   }
 
   const [stepsList,setStepsList] = useState([daysSelection , hourSelection , step3])

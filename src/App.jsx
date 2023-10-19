@@ -35,6 +35,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Skills from "./pages/Skills";
 import ContractCreationPanel from "./pages/ContractCreationPanel";
 import Test from "./pages/HourPicker";
+import ATest from "./pages/Test";
 
 function App() {
   return (
@@ -61,7 +62,7 @@ function App() {
         <Route path="/Contracts" element={<Contract />} />
         <Route path="/Skills" element={<Skills />} />
         <Route path="/steps" element={<ContractCreationPanel />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/test" element={<ATest />} />
 
         <Route path="/File2" element={<File2 />} />
       </Routes>
